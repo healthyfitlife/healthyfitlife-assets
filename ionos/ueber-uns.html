@@ -1,0 +1,243 @@
+<style>#hfl{--bg: #ffffff; --surface: #f2f2f2; --ink: #111111; --muted: #5c5c5c; --accent: #111111; --accent-ink: #ffffff; --font-display: system-ui, sans-serif; --font-text: system-ui, sans-serif; --step-small: clamp(0.8125rem, 0.79rem + 0.1vw, 0.875rem); --step-body: clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem); --step-lead: clamp(1.25rem, 1.1rem + 0.7vw, 1.625rem); --step-head: clamp(2rem, 1.3rem + 3.2vw, 4rem); --step-display: clamp(3rem, 1rem + 9vw, 9rem); --margin: clamp(1rem, 2.2vw, 2rem); --gutter: clamp(1rem, 2vw, 2rem); --section: clamp(5rem, 12vw, 13rem); --radius: 0px; --ease-out: cubic-bezier(0.22, 1, 0.36, 1); --ease-expo: cubic-bezier(0.16, 1, 0.3, 1); --ease-in-out: cubic-bezier(0.76, 0, 0.24, 1); --ease-soft: cubic-bezier(0.33, 1, 0.68, 1); --ease-exit: cubic-bezier(0.55, 0.055, 0.675, 0.19); --t-press: 140ms; --t-hover: 180ms; --t-ui: 240ms; --t-reveal: 800ms; --t-open: 1200ms; --stagger-line: 90ms; --stagger-item: 70ms;}
+#hfl, #hfl *,#hfl *::before,#hfl *::after{box-sizing: border-box;}
+#hfl{-webkit-text-size-adjust: 100%; text-size-adjust: 100%; scroll-behavior: auto;}
+#hfl{margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font-text); font-size: var(--step-body); line-height: 1.5; font-kerning: normal; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;}
+#hfl h1,#hfl h2,#hfl h3,#hfl p{margin: 0;}
+#hfl img{display: block; max-width: 100%;}
+#hfl img{height: auto; background: var(--surface);}
+#hfl a{color: inherit;}
+#hfl :target{scroll-margin-top: 6rem;}
+#hfl ::selection{background: var(--accent); color: var(--accent-ink);}
+#hfl :focus-visible{outline: 2px solid var(--accent); outline-offset: 3px;}
+#hfl h1,#hfl h2,#hfl h3{font-family: var(--font-display); font-weight: inherit; text-wrap: balance; hyphens: none;}
+#hfl .lead{font-size: var(--step-lead); line-height: 1.35; max-width: 40ch;}
+#hfl .small{font-size: var(--step-small); line-height: 1.45;}
+#hfl p{max-width: 62ch; text-wrap: pretty;}
+#hfl p + p{margin-top: 0.9em;}
+#hfl .button{display: inline-flex; align-items: center; justify-content: center; min-height: 3rem; padding: 0 1.4rem; background: var(--accent); color: var(--accent-ink); border-radius: var(--radius); text-decoration: none; white-space: nowrap; transition: transform var(--t-press) var(--ease-out), background-color var(--t-hover) ease, color var(--t-hover) ease;}
+#hfl .button:active{transform: scale(0.97);}
+@media (prefers-reduced-motion: no-preference){#hfl.js [data-rise]{opacity: 0; transform: translateY(18px); animation: ad-rise var(--t-reveal) var(--ease-out) forwards; animation-delay: calc(var(--i, 0) * 90ms + 120ms);}
+#hfl.js [data-reveal]{opacity: 0; transform: translateY(24px); transition: opacity 700ms var(--ease-out), transform 900ms var(--ease-out);}
+#hfl.js [data-reveal].is-in{opacity: 1; transform: none;}}
+@keyframes ad-rise{to { opacity: 1; transform: none; }}
+@keyframes ad-line{to { transform: none; }}
+#hfl{--bg: #f1efe9; --surface: #e6e1d6; --ink: #1f3a2d; --muted: #3d5246; --accent: #f2c14e; --accent-ink: #1f3a2d; --paper: #fafaf7; --sage: #a9bb9b; --sage-ink: #1f3a2d; --gold: #f2c14e; --gold-ink: #1f3a2d; --oat: #e3d6bf; --oat-ink: #1f3a2d; --green: #1f3a2d; --green-ink: #f1efe9; --font-display: "Lora", Georgia, serif; --font-text: "Poppins", system-ui, sans-serif; --step-small: 0.875rem; --step-item: clamp(1.125rem, 1rem + 0.35vw, 1.375rem); --step-body: 1.0625rem; --step-lead: var(--step-item); --step-head: clamp(2.125rem, 1.4rem + 2.9vw, 3.75rem); --step-display: clamp(3.25rem, 1.2rem + 6.4vw, 7.25rem); --margin: clamp(1.25rem, 3.4vw, 3.5rem); --gutter: clamp(0.75rem, 1.6vw, 1.5rem); --section: clamp(7.5rem, 14vw, 15rem); --radius: 0px;}
+#hfl{overflow-x: hidden;}
+#hfl{display: block;}
+#hfl .button{font-weight: 500; gap: 0.5rem;}
+#hfl .button.ink{background: var(--ink); color: var(--bg);}
+#hfl .button.paper{background: var(--paper); color: var(--ink);}
+@media (hover: hover) and (pointer: fine){#hfl .button:hover{background: #e6b23a;}
+#hfl .button.ink:hover{background: #2c4d3d;}
+#hfl .button.paper:hover{background: #fff;}}
+#hfl .f-sage{background: var(--sage);}
+#hfl .two{margin-top: var(--section); display: grid; grid-template-columns: 1fr 1fr;}
+#hfl .panel{position: relative; height: 92svh; min-height: 40rem; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-end;}
+#hfl .panel.green{background: var(--green); color: var(--green-ink);}
+#hfl .panel.gold{background: var(--gold); color: var(--gold-ink);}
+#hfl .panel .obj{position: absolute; left: 50%; top: 0; width: 82%; transform: translateX(-50%);}
+#hfl .panel.green .obj{aspect-ratio: 4 / 5; top: -10%; width: 58%; left: auto; right: 8%; transform: none;}
+#hfl .panel.green .obj img{width: 100%; height: 100%; object-fit: cover;}
+#hfl .panel.gold .obj{width: 112%; top: -14%; mix-blend-mode: multiply;}
+#hfl .panel h2{position: absolute; top: 1.75rem; left: 1.75rem; font-size: var(--step-head); line-height: 1.05; letter-spacing: -0.02em; font-weight: 600; z-index: 2;}
+#hfl .panel-row{position: relative; z-index: 2; display: flex; justify-content: space-between; align-items: flex-end; gap: 1.25rem; padding: 1.75rem;}
+#hfl .panel-row .name{font-size: var(--step-item); font-weight: 500;}
+#hfl .panel-row .fact{font-size: var(--step-body);}
+#hfl .panel-row .acts{display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: flex-end;}
+#hfl .panel.green .panel-row{background: var(--green);}
+@media (max-width: 52em){#hfl .two{grid-template-columns: 1fr;}
+#hfl .panel{height: 78svh; min-height: 34rem;}
+#hfl .panel-row{flex-direction: column; align-items: stretch;}
+#hfl .panel-row .acts{justify-content: stretch;}
+#hfl .panel-row .acts .button{flex: 1;}
+#hfl .panel h2{top: 1.25rem; left: 1.25rem;}
+#hfl .panel.green .obj{width: 88%; right: 0; top: -12%;}}
+#hfl .rhead{padding: clamp(3rem, 7vw, 6rem) var(--margin) 0; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gutter);}
+#hfl .rhead h1{grid-column: 1 / span 8; font-size: var(--step-display); line-height: 0.95; letter-spacing: -0.035em; font-weight: 600;}
+#hfl .rhead .lead{grid-column: 1 / span 6; margin-top: 2rem;}
+@media (max-width: 52em){#hfl .rhead h1,#hfl .rhead .lead{grid-column: 1 / -1;}}
+#hfl .recipe{padding: var(--section) var(--margin) 0; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gutter); scroll-margin-top: 4rem;}
+#hfl .recipe .pic{grid-column: 1 / span 5; align-self: start; position: sticky; top: 6rem; display: grid; place-items: center; aspect-ratio: 4 / 5; padding: 10%;}
+#hfl .recipe .pic img{width: 100%; height: 100%; object-fit: cover;}
+#hfl .recipe .body{grid-column: 7 / -1;}
+#hfl .recipe h2{font-size: var(--step-head); line-height: 1.02; letter-spacing: -0.025em; font-weight: 600;}
+#hfl .recipe h3{margin-top: 2.75rem; font-family: var(--font-text); font-size: var(--step-item); font-weight: 500; letter-spacing: 0;}
+#hfl .recipe .body p{max-width: none;}
+@media (max-width: 40em){#hfl .recipe .pic,#hfl .recipe .body{grid-column: 1 / -1; grid-row: auto;}
+#hfl .recipe .pic{position: static; margin-bottom: 2rem;}}
+#hfl .howbuy{margin-top: var(--section); background: var(--green); color: var(--green-ink); padding: clamp(4.5rem, 8vw, 7rem) var(--margin); display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gutter);}
+#hfl .howbuy h2{grid-column: 1 / span 4; font-size: var(--step-head); line-height: 1.02; letter-spacing: -0.025em; font-weight: 600;}
+#hfl .howbuy-cols{grid-column: 5 / -1; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2.5rem var(--gutter);}
+#hfl .howbuy h3{font-family: var(--font-display); font-size: var(--step-item); font-weight: 600; letter-spacing: -0.01em;}
+#hfl .howbuy-cols p{margin-top: 0.6rem;}
+#hfl .howbuy-note{grid-column: 5 / -1; margin-top: 3rem; max-width: 60ch;}
+#hfl .howbuy-note a{color: inherit;}
+@media (max-width: 52em){#hfl .howbuy h2,#hfl .howbuy-cols,#hfl .howbuy-note{grid-column: 1 / -1;}
+#hfl .howbuy-cols{margin-top: 2.5rem; grid-template-columns: 1fr;}}
+@media (prefers-reduced-motion: no-preference){#hfl.js [data-reveal]{transition-delay: calc(var(--i, 0) * 80ms);}}
+#hfl :focus-visible{outline-color: var(--ink);}
+#hfl .howbuy :focus-visible,#hfl .panel.green :focus-visible{outline-color: var(--gold);}
+#hfl .recipe .body h2 + p{margin-top: 1.25rem;}
+#hfl{position:relative;width:100vw;max-width:100vw;margin-left:calc(50% - 50vw);text-align:left;overflow-x:clip}#hfl h1,#hfl h2,#hfl h3,#hfl p,#hfl a,#hfl dt,#hfl dd,#hfl summary,#hfl button,#hfl span{letter-spacing:normal;text-transform:none}#hfl h1,#hfl h2,#hfl h3{color:inherit}#hfl img,#hfl video{border:0;border-radius:0;box-shadow:none}#hfl .panel{height:auto;min-height:0;aspect-ratio:5/6}#hfl .panel.gold .panel-row{background:var(--gold)}@media (max-width:52em){#hfl .panel{aspect-ratio:4/5}}@supports selector(:has(a)){.section-inner-width:has(#hfl),.section-content:has(#hfl),.grid-row-root:has(#hfl),.grid-column-root:has(#hfl),.module-container-root:has(#hfl),.text-root:has(#hfl),.text-root:has(#hfl)>div{max-width:none!important;width:100%!important;flex:1 1 100%!important;padding:0!important;margin:0!important;overflow:visible!important}.grid-row-root:has(#hfl)>.grid-column-root:not(:has(#hfl)){display:none!important}#hfl{width:100%;max-width:none;margin-left:0}}@supports selector(:has(a)){main>.section-root:has(#hfl)~.section-root{display:none!important}}</style>
+<div id="hfl" class="hfl">
+
+<section class="rhead" aria-labelledby="hfl-h1">
+  <h1 id="hfl-h1" data-rise style="--i:0">Gesundheit mit Herz</h1>
+  <p class="lead" data-rise style="--i:1">Alltagstaugliche Inhalte zu Ernährung, Bewegung und bewussten Entscheidungen. Ein Blog für nachhaltige Gesundheit und Fitness.</p>
+</section>
+
+<article class="recipe" aria-labelledby="hfl-h-herz">
+  <div class="pic f-sage" data-reveal><img src="https://www.healthyfitlifeshop.net/wp-content/uploads/go-x/u/2b27bbc2-d6e5-4096-9aa2-27be1d03b4e9/image.jpg" width="800" height="1000" alt="Quinoa-Bowl mit Röstkichererbsen, Grünkohl und Avocado" loading="lazy" decoding="async"></div>
+  <div class="body">
+    <h2 id="hfl-h-herz" data-reveal>Das Herzstück von Healthy Fit Life</h2>
+    <p data-reveal style="--i:1">Verständliche Inhalte, Transparenz und Alltagstauglichkeit stehen bei Healthy Fit Life im Mittelpunkt. Wir zeigen, wie Rezepte, Bewegung und ausgewählte Produktempfehlungen unkompliziert in den Alltag passen können.</p>
+    <p data-reveal style="--i:2">Im Blog findest du verständliche Beiträge zu Ernährung, Bewegung und ausgewählten Produkten, in der Videoserie „Darmfreundlich &amp; einfach“ kurze Rezepte mit echten Mengen.</p>
+  </div>
+</article>
+
+<section class="howbuy" aria-labelledby="hfl-h-werte">
+  <h2 id="hfl-h-werte" data-reveal>Worauf du dich verlassen kannst</h2>
+  <div class="howbuy-cols">
+    <div data-reveal style="--i:1"><h3>Qualität</h3><p>Wir bereiten Informationen verständlich auf und kennzeichnen Produktempfehlungen transparent.</p></div>
+    <div data-reveal style="--i:2"><h3>Nachhaltigkeit</h3><p>Wir bevorzugen alltagstaugliche Ideen, bewussten Konsum und möglichst langlebige Lösungen.</p></div>
+    <div data-reveal style="--i:3"><h3>Vertrauen</h3><p>Wir unterscheiden redaktionelle Inhalte klar von werblichen Links und Empfehlungen.</p></div>
+  </div>
+  <p class="howbuy-note small" data-reveal>Unsere Inhalte ersetzen keine medizinische Beratung.</p>
+</section>
+
+<section class="two" aria-label="Weiterlesen">
+  <div class="panel green">
+    <h2>Weiter&shy;lesen</h2>
+    <div class="obj"><img src="https://www.healthyfitlifeshop.net/wp-content/uploads/go-x/u/327b9f60-3f87-42c3-a030-62a331fbd0a2/image.jpg" width="800" height="1000" alt="Kichererbsen-Kürbis-Curry mit Reis" loading="lazy" decoding="async"></div>
+    <div class="panel-row">
+      <div><p class="name">Rezepte der Serie</p><p class="fact">9 Gerichte mit Mengen und Darm-Tipp</p></div>
+      <div class="acts"><a class="button paper" href="https://www.healthyfitlifeshop.net/gesunde-rezepte/">Zu den Rezepten</a></div>
+    </div>
+  </div>
+  <div class="panel gold">
+    <div class="obj"><img src="https://www.healthyfitlifeshop.net/wp-content/uploads/go-x/u/f94f4f51-7b40-4c25-a587-f72d62c0efe8/image.jpg" width="1100" height="1100" alt="Darm-Reset: das PDF auf Tablet und als Ausdruck" loading="lazy" decoding="async"></div>
+    <div class="panel-row">
+      <div><p class="name">Darm-Reset</p><p class="fact">4-Wochen-Plan als PDF · 9 €</p></div>
+      <div class="acts"><a class="button ink" href="https://www.healthyfitlifeshop.net/shop/">Zum Shop</a></div>
+    </div>
+  </div>
+</section>
+</div>
+<script>(function(){var root=document.getElementById('hfl');if(!root||root.dataset.on)return;root.dataset.on='1';root.classList.add('js');
+
+
+
+
+
+
+(() => {
+  const targets = root.querySelectorAll('[data-reveal]');
+  if (!targets.length) return;
+  if (!('IntersectionObserver' in window)) { targets.forEach((el) => el.classList.add('is-in')); return; }
+  const io = new IntersectionObserver((entries) => {
+    for (const entry of entries) {
+      if (!entry.isIntersecting) continue;
+      entry.target.classList.add('is-in');
+      io.unobserve(entry.target);
+    }
+  }, { rootMargin: '0px 0px -12% 0px', threshold: 0.1 });
+  targets.forEach((el) => io.observe(el));
+  
+  window.addEventListener('load', () => setTimeout(() => {
+    targets.forEach((el) => { const r = el.getBoundingClientRect(); if (r.top < innerHeight && r.bottom > 0) el.classList.add('is-in'); });
+  }, 2500));
+})();
+
+
+
+
+
+
+(() => {
+  const chapters = root.querySelectorAll('[data-ink]');
+  if (!chapters.length || !('IntersectionObserver' in window)) return;
+  const io = new IntersectionObserver((entries) => {
+    for (const entry of entries) if (entry.isIntersecting) document.documentElement.style.setProperty('--header-ink', entry.target.dataset.ink);
+  }, { rootMargin: '0px 0px -92% 0px', threshold: 0 });
+  chapters.forEach((el) => io.observe(el));
+})();
+
+
+(() => {
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  
+  const plinth = root.querySelector('[data-plinth]');
+  if (plinth && !reduce) {
+    const figs = [...plinth.querySelectorAll('figure')];
+    const capName = root.querySelector('[data-cap-name]');
+    const capPart = root.querySelector('[data-cap-part]');
+    let i = 0, timer = null;
+    const show = (n) => {
+      figs[i].classList.remove('on');
+      i = n % figs.length;
+      const f = figs[i];
+      const img = f.querySelector('img');
+      if (img.loading === 'lazy') img.loading = 'eager';
+      f.classList.add('on');
+      if (capName) capName.textContent = f.dataset.name;
+      if (capPart) capPart.textContent = f.dataset.part;
+    };
+    const start = () => { if (!timer) timer = setInterval(() => show(i + 1), 5200); };
+    const stop = () => { clearInterval(timer); timer = null; };
+    document.addEventListener('visibilitychange', () => (document.hidden ? stop() : start()));
+    
+    addEventListener('load', () => figs.forEach((f) => { const im = f.querySelector('img'); im.loading = 'eager'; }));
+    start();
+  }
+
+  
+  const counter = root.querySelector('[data-counter]');
+  if (counter) {
+    const tiles = [...root.querySelectorAll('[data-plants]')];
+    const num = counter.querySelector('[data-num]');
+    const list = counter.querySelector('[data-list]');
+    const note = counter.querySelector('[data-note]');
+    const meter = counter.querySelector('.meter');
+    const KEY = 'hfl-week';
+    let picked = new Set();
+    try { picked = new Set(JSON.parse(localStorage.getItem(KEY) || '[]')); } catch {}
+    const render = () => {
+      const plants = new Set();
+      tiles.forEach((t) => {
+        const on = picked.has(t.dataset.slug);
+        t.setAttribute('aria-pressed', String(on));
+        const st = root.querySelector(`[data-state="${t.dataset.slug}"]`);
+        if (st) st.textContent = on ? 'In deiner Woche' : '';
+        if (on) t.dataset.plants.split('|').forEach((p) => plants.add(p));
+      });
+      const n = plants.size;
+      num.textContent = n;
+      meter.style.setProperty('--p', Math.min(n / 30, 1));
+      counter.classList.toggle('full', n >= 30);
+      list.textContent = n ? [...plants].sort((a, b) => a.localeCompare(b, 'de')).join(', ') : 'Noch nichts ausgewählt.';
+      note.textContent = n === 0 ? 'Tippe auf die Gerichte, die du diese Woche kochen willst.'
+        : n >= 30 ? 'Geschafft: 30 verschiedene Pflanzen in einer Woche.'
+        : `Noch ${30 - n} bis zu deinen 30 Pflanzen.`;
+      try { localStorage.setItem(KEY, JSON.stringify([...picked])); } catch {}
+    };
+    tiles.forEach((t) => t.addEventListener('click', () => {
+      const s = t.dataset.slug;
+      picked.has(s) ? picked.delete(s) : picked.add(s);
+      render();
+    }));
+    counter.querySelector('[data-all]').addEventListener('click', () => { tiles.forEach((t) => picked.add(t.dataset.slug)); render(); });
+    counter.querySelector('[data-clear]').addEventListener('click', () => { picked.clear(); render(); });
+    counter.hidden = false;
+    render();
+  }
+
+  
+  root.querySelectorAll('video[data-loop]').forEach((v) => {
+    if (reduce) { v.removeAttribute('autoplay'); v.pause(); return; }
+    const io = new IntersectionObserver(([e]) => (e.isIntersecting ? v.play().catch(() => {}) : v.pause()), { threshold: 0.2 });
+    io.observe(v);
+  });
+})();
+
+})();</script>
