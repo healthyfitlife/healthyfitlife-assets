@@ -1,0 +1,264 @@
+<style>#hfl{--bg: #ffffff; --surface: #f2f2f2; --ink: #111111; --muted: #5c5c5c; --accent: #111111; --accent-ink: #ffffff; --font-display: system-ui, sans-serif; --font-text: system-ui, sans-serif; --step-small: clamp(0.8125rem, 0.79rem + 0.1vw, 0.875rem); --step-body: clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem); --step-lead: clamp(1.25rem, 1.1rem + 0.7vw, 1.625rem); --step-head: clamp(2rem, 1.3rem + 3.2vw, 4rem); --step-display: clamp(3rem, 1rem + 9vw, 9rem); --margin: clamp(1rem, 2.2vw, 2rem); --gutter: clamp(1rem, 2vw, 2rem); --section: clamp(5rem, 12vw, 13rem); --radius: 0px; --ease-out: cubic-bezier(0.22, 1, 0.36, 1); --ease-expo: cubic-bezier(0.16, 1, 0.3, 1); --ease-in-out: cubic-bezier(0.76, 0, 0.24, 1); --ease-soft: cubic-bezier(0.33, 1, 0.68, 1); --ease-exit: cubic-bezier(0.55, 0.055, 0.675, 0.19); --t-press: 140ms; --t-hover: 180ms; --t-ui: 240ms; --t-reveal: 800ms; --t-open: 1200ms; --stagger-line: 90ms; --stagger-item: 70ms;}
+#hfl, #hfl *,#hfl *::before,#hfl *::after{box-sizing: border-box;}
+#hfl{-webkit-text-size-adjust: 100%; text-size-adjust: 100%; scroll-behavior: auto;}
+#hfl{margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font-text); font-size: var(--step-body); line-height: 1.5; font-kerning: normal; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;}
+#hfl h1,#hfl h2,#hfl h3,#hfl p{margin: 0;}
+#hfl img{display: block; max-width: 100%;}
+#hfl img{height: auto; background: var(--surface);}
+#hfl a{color: inherit;}
+#hfl :target{scroll-margin-top: 6rem;}
+#hfl ::selection{background: var(--accent); color: var(--accent-ink);}
+#hfl :focus-visible{outline: 2px solid var(--accent); outline-offset: 3px;}
+#hfl h1,#hfl h2,#hfl h3{font-family: var(--font-display); font-weight: inherit; text-wrap: balance; hyphens: none;}
+#hfl .lead{font-size: var(--step-lead); line-height: 1.35; max-width: 40ch;}
+#hfl .small{font-size: var(--step-small); line-height: 1.45;}
+#hfl p{max-width: 62ch; text-wrap: pretty;}
+#hfl p + p{margin-top: 0.9em;}
+@media (prefers-reduced-motion: no-preference){#hfl.js [data-rise]{opacity: 0; transform: translateY(18px); animation: ad-rise var(--t-reveal) var(--ease-out) forwards; animation-delay: calc(var(--i, 0) * 90ms + 120ms);}
+#hfl.js [data-reveal]{opacity: 0; transform: translateY(24px); transition: opacity 700ms var(--ease-out), transform 900ms var(--ease-out);}
+#hfl.js [data-reveal].is-in{opacity: 1; transform: none;}}
+@keyframes ad-rise{to { opacity: 1; transform: none; }}
+@keyframes ad-line{to { transform: none; }}
+#hfl{--bg: #f1efe9; --surface: #e6e1d6; --ink: #1f3a2d; --muted: #3d5246; --accent: #f2c14e; --accent-ink: #1f3a2d; --paper: #fafaf7; --sage: #a9bb9b; --sage-ink: #1f3a2d; --gold: #f2c14e; --gold-ink: #1f3a2d; --oat: #e3d6bf; --oat-ink: #1f3a2d; --green: #1f3a2d; --green-ink: #f1efe9; --font-display: "Lora", Georgia, serif; --font-text: "Poppins", system-ui, sans-serif; --step-small: 0.875rem; --step-item: clamp(1.125rem, 1rem + 0.35vw, 1.375rem); --step-body: 1.0625rem; --step-lead: var(--step-item); --step-head: clamp(2.125rem, 1.4rem + 2.9vw, 3.75rem); --step-display: clamp(3.25rem, 1.2rem + 6.4vw, 7.25rem); --margin: clamp(1.25rem, 3.4vw, 3.5rem); --gutter: clamp(0.75rem, 1.6vw, 1.5rem); --section: clamp(7.5rem, 14vw, 15rem); --radius: 0px;}
+#hfl{overflow-x: hidden;}
+#hfl{display: block;}
+#hfl .f-sage{background: var(--sage);}
+#hfl .f-gold{background: var(--gold);}
+#hfl .f-oat{background: var(--oat);}
+#hfl .f-green{background: var(--green);}
+#hfl .group + .group{margin-top: 2.5rem;}
+#hfl .group h3{font-family: var(--font-text); font-size: var(--step-body); font-weight: 400; color: var(--muted); letter-spacing: 0; margin-bottom: 0.5rem;}
+#hfl .row{display: flex; justify-content: space-between; align-items: baseline; gap: 1.25rem; padding: 0.55rem 0; text-decoration: none;}
+#hfl .row .l{display: flex; align-items: baseline; gap: 0.6rem;}
+#hfl .row .dot{flex: none; width: 1rem; height: 1rem; border-radius: 50%; transform: translateY(0.15em);}
+#hfl .row .v{flex: none; font-size: var(--step-small); color: var(--muted); font-variant-numeric: tabular-nums;}
+#hfl .row .n{transition: color var(--t-hover) ease;}
+@media (hover: hover) and (pointer: fine){#hfl .row:hover .n{text-decoration: underline; text-underline-offset: 0.2em; text-decoration-thickness: 0.07em;}}
+@media (max-width: 52em){#hfl .row{min-height: 2.75rem; flex-direction: column; gap: 0.15rem;}
+#hfl .row .v{padding-left: 1.6rem;}}
+#hfl .bhead{padding: clamp(3rem, 7vw, 6rem) var(--margin) 0; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gutter); align-items: end;}
+#hfl .bhead h1{grid-column: 1 / span 7; font-size: min(var(--step-display), 7.4vw); line-height: 0.95; letter-spacing: -0.035em; font-weight: 600;}
+#hfl .bhead .lead{grid-column: 8 / -1; max-width: 36ch;}
+#hfl .featured{padding: clamp(3rem, 6vw, 5rem) var(--margin) 0; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gutter);}
+#hfl .feat h2{font-family: var(--font-display); font-weight: 600; letter-spacing: -0.02em; line-height: 1.08;}
+#hfl .feat h2 a{text-decoration: none;}
+#hfl .feat-sub{margin-top: 0.4rem; font-size: var(--step-body);}
+#hfl .feat-meta{margin-top: 0.4rem; color: var(--muted); font-size: var(--step-body);}
+#hfl .feat.big{grid-column: 1 / span 7;}
+#hfl .feat.big .feat-pic{display: block; overflow: hidden;}
+#hfl .feat.big .feat-pic img{width: 100%; aspect-ratio: 16 / 10; object-fit: cover; transition: transform 700ms var(--ease-out);}
+#hfl .feat.big h2{margin-top: 1.25rem; font-size: var(--step-head);}
+#hfl .feat-side{grid-column: 8 / -1; display: grid; gap: 2.5rem; align-content: start;}
+#hfl .feat.small{display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); gap: 1.25rem; align-items: start;}
+#hfl .feat.small .feat-pic{display: grid; place-items: center; aspect-ratio: 4 / 5; padding: 12%;}
+#hfl .feat.small .feat-pic img{width: 100%; height: 100%; object-fit: cover; transition: transform 500ms var(--ease-out);}
+#hfl .feat.small h2{font-size: var(--step-item);}
+#hfl .feat-pic.type span{font-family: var(--font-display); font-weight: 600; font-size: var(--step-item); color: var(--ink);}
+@media (hover: hover) and (pointer: fine){#hfl .feat-pic:hover img{transform: scale(1.03);}}
+@media (max-width: 52em){#hfl .bhead h1,#hfl .bhead .lead,#hfl .feat.big,#hfl .feat-side{grid-column: 1 / -1;}
+#hfl .bhead .lead{margin-top: 1.5rem;}
+#hfl .bhead h1{font-size: 13vw;}
+#hfl .feat-side{margin-top: 3rem;}}
+#hfl .allposts{padding: var(--section) var(--margin) 0; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gutter);}
+#hfl .allposts-head{grid-column: 1 / span 4; align-self: start; position: sticky; top: 6.5rem;}
+#hfl .allposts-head h2{font-size: var(--step-head); line-height: 1.02; letter-spacing: -0.025em; font-weight: 600;}
+#hfl .allposts-head p{margin-top: 1.25rem;}
+#hfl .allposts-groups{grid-column: 5 / -1; columns: 2; column-gap: calc(var(--gutter) * 2);}
+#hfl .allposts .group{break-inside: avoid; margin-bottom: 2.75rem;}
+#hfl .allposts .group + .group{margin-top: 0;}
+#hfl .cnt{color: var(--muted); margin-left: 0.35rem;}
+@media (max-width: 64em){#hfl .allposts-head{grid-column: 1 / -1; position: static; margin-bottom: 2.5rem;}
+#hfl .allposts-groups{grid-column: 1 / -1;}}
+@media (max-width: 40em){#hfl .allposts-groups{columns: 1;}}
+#hfl .related{padding: var(--section) var(--margin) 0;}
+#hfl .related h2{font-size: var(--step-head); line-height: 1.02; letter-spacing: -0.025em; font-weight: 600;}
+#hfl .rel-row{margin-top: 2.5rem; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--gutter);}
+#hfl .rel-row:has(> :nth-child(3):last-child){grid-template-columns: repeat(3, minmax(0, 1fr));}
+#hfl .rel{display: flex; flex-direction: column; text-decoration: none; min-width: 0;}
+#hfl .rel .sw{display: grid; place-items: center; aspect-ratio: 4 / 5; padding: 12%;}
+#hfl .rel img{width: 100%; height: 100%; object-fit: cover; transition: transform 500ms var(--ease-out);}
+#hfl .rel-name{margin-top: 1rem; font-weight: 500; font-size: var(--step-item); line-height: 1.3;}
+#hfl .rel-meta{margin-top: 0.25rem; color: var(--muted);}
+@media (hover: hover) and (pointer: fine){#hfl .rel:hover img{transform: scale(1.03);}}
+@media (max-width: 52em){#hfl .rel-row,#hfl .rel-row:has(> :nth-child(3):last-child){grid-template-columns: repeat(2, minmax(0, 1fr));}}
+@media (prefers-reduced-motion: no-preference){#hfl.js [data-reveal]{transition-delay: calc(var(--i, 0) * 80ms);}}
+#hfl :focus-visible{outline-color: var(--ink);}
+#hfl .allposts .row .v{font-size: var(--step-body);}
+#hfl{position:relative;width:100vw;max-width:100vw;margin-left:calc(50% - 50vw);text-align:left;overflow-x:clip}#hfl h1,#hfl h2,#hfl h3,#hfl p,#hfl a,#hfl dt,#hfl dd,#hfl summary,#hfl button,#hfl span{letter-spacing:normal;text-transform:none}#hfl h1,#hfl h2,#hfl h3{color:inherit}#hfl img,#hfl video{border:0;border-radius:0;box-shadow:none}#hfl .panel{height:auto;min-height:0;aspect-ratio:5/6}#hfl .panel.gold .panel-row{background:var(--gold)}@media (max-width:52em){#hfl .panel{aspect-ratio:4/5}}@supports selector(:has(a)){.section-inner-width:has(#hfl),.section-content:has(#hfl),.grid-row-root:has(#hfl),.grid-column-root:has(#hfl),.module-container-root:has(#hfl),.text-root:has(#hfl),.text-root:has(#hfl)>div{max-width:none!important;width:100%!important;flex:1 1 100%!important;padding:0!important;margin:0!important;overflow:visible!important}.grid-row-root:has(#hfl)>.grid-column-root:not(:has(#hfl)){display:none!important}#hfl{width:100%;max-width:none;margin-left:0}}
+@supports selector(:has(a)){body.blog .section-root:has(.blog-container) .section-inner-width{max-width:none!important}}
+body.blog .blog-container{max-width:none;padding:clamp(3rem,6vw,6rem) clamp(1rem,2.2vw,2rem) clamp(4rem,8vw,7rem)}
+body.blog .blog-container::before{content:"Neu im Blog";display:block;font-family:Lora,Georgia,serif;font-weight:600;
+  font-size:clamp(2rem,1.3rem + 3.2vw,4rem);line-height:1.02;letter-spacing:-.025em;color:#1f3a2d;margin:0 0 2rem}
+body.blog .wp-block-post-template{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:clamp(1.5rem,4vw,4rem);
+  border-top:2px solid #1f3a2d;margin:0!important;padding:0!important}
+body.blog .wp-block-post{margin:0!important;padding:1.5rem 0 1.75rem;border-bottom:1px solid rgba(31,58,45,.2);list-style:none}
+body.blog .wp-block-post-date{font:500 .875rem/1.4 Poppins,sans-serif;color:#3d5246}
+body.blog .wp-block-post-title{font:600 clamp(1.25rem,1.05rem + .8vw,1.625rem)/1.2 Lora,Georgia,serif!important;margin:.4rem 0 .6rem!important;letter-spacing:-.01em}
+body.blog .wp-block-post-title a{color:#1f3a2d!important;text-decoration:none}
+body.blog .wp-block-post-title a:hover{text-decoration:underline;text-decoration-thickness:.07em;text-underline-offset:.18em}
+body.blog .wp-block-post-excerpt__excerpt{font:400 1rem/1.55 Poppins,sans-serif;color:#3d5246;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;margin:0}
+body.blog .wp-block-post-excerpt__excerpt img.emoji{display:none!important}
+body.blog .wp-block-post-excerpt__more-text{margin:.75rem 0 0}
+body.blog .wp-block-post-excerpt__more-link{font:500 .9375rem Poppins,sans-serif;color:#1f3a2d;text-decoration:underline;text-decoration-color:#f2c14e;text-decoration-thickness:2px;text-underline-offset:.25em}
+body.blog .blog-spacer{display:none}
+body.blog .blog-pagination{margin-top:2.5rem}
+body.blog .wp-block-query-pagination{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;font:500 1rem Poppins,sans-serif}
+body.blog .page-numbers{display:inline-flex;min-width:2.75rem;min-height:2.75rem;align-items:center;justify-content:center;color:#1f3a2d;text-decoration:none;background:#e6e1d6}
+body.blog .page-numbers.current{background:#1f3a2d;color:#fafaf7}
+body.blog .page-numbers.dots{background:none}
+body.blog .wp-block-query-pagination-next,body.blog .wp-block-query-pagination-previous{display:inline-flex;min-height:2.75rem;align-items:center;padding:0 1.2rem;background:#f2c14e;color:#1f3a2d;text-decoration:none}
+@media (max-width:40em){body.blog .wp-block-post-template{grid-template-columns:1fr}}
+</style>
+<div id="hfl" class="hfl">
+
+<section class="bhead" aria-labelledby="hfl-h1">
+  <h1 id="hfl-h1" data-rise style="--i:0">Rezepte, Tests und Tipps</h1>
+  <p class="lead" data-rise style="--i:1">Der HealthyFitLife-Blog: Rezepte, ehrliche Produkttests und Gedanken zu Gesundheit im Alltag. Werbung und Affiliate-Links sind in jedem Beitrag gekennzeichnet.</p>
+</section>
+<section class="featured" aria-label="Neue Beiträge">
+  <article class="feat big" data-reveal>
+    <a class="feat-pic" href="https://www.healthyfitlifeshop.net/blog/3-gesunde-herbstrezepte-fuer-deine-woche-kuerbis-linsen-suppe-overnight-oats-protein-bowl/"><img src="https://www.healthyfitlifeshop.net/wp-content/uploads/go-x/u/9cd3297a-0891-495b-819d-24c8e3165454/image.jpg" width="1600" height="1000" alt="Kürbis-Linsen-Suppe im Kupfertopf" decoding="async"></a>
+    <h2><a href="https://www.healthyfitlifeshop.net/blog/3-gesunde-herbstrezepte-fuer-deine-woche-kuerbis-linsen-suppe-overnight-oats-protein-bowl/">3 Herbstrezepte für deine Woche</a></h2>
+    <p class="feat-sub">Kürbis-Linsen-Suppe, Overnight Oats und eine Protein-Bowl</p>
+    <p class="feat-meta">Rezepte · 22. Oktober 2026 · Werbung</p>
+  </article>
+  <div class="feat-side">
+    <article class="feat small" data-reveal style="--i:1">
+      <a class="feat-pic f-gold" href="https://www.healthyfitlifeshop.net/blog/wmf-kult-x-mix-go-protein-shakes-und-smoothies-einfach-to-go/"><img src="https://www.healthyfitlifeshop.net/wp-content/uploads/go-x/u/6a579704-f55a-4093-b890-9e6c07d79012/image.jpg" width="900" height="900" alt="Grüner Kefir-Smoothie im Glas" decoding="async"></a>
+      <div><h2><a href="https://www.healthyfitlifeshop.net/blog/wmf-kult-x-mix-go-protein-shakes-und-smoothies-einfach-to-go/">WMF Kult X Mix &amp; Go im Test</a></h2><p class="feat-sub">Protein-Shakes und Smoothies einfach to go</p><p class="feat-meta">Küche und Meal Prep · 22. Oktober 2026 · Werbung</p></div>
+    </article>
+    <article class="feat small" data-reveal style="--i:2">
+      <a class="feat-pic f-sage type" href="https://www.healthyfitlifeshop.net/blog/heilung-und-gesundheit-beginnen-im-kopf-wie-deine-gedanken-dein-wohlbefinden-beeinflussen/" aria-hidden="true" tabindex="-1"><span>Buchtipp</span></a>
+      <div><h2><a href="https://www.healthyfitlifeshop.net/blog/heilung-und-gesundheit-beginnen-im-kopf-wie-deine-gedanken-dein-wohlbefinden-beeinflussen/">Heilung beginnt im Kopf</a></h2><p class="feat-sub">Ein Buchtipp: „Heilung und Gesundheit beginnen im Kopf“ von Annette Müller</p><p class="feat-meta">Familie und Wohlbefinden · 22. Oktober 2026 · Werbung</p></div>
+    </article>
+  </div>
+</section>
+
+<section class="allposts" aria-labelledby="hfl-h-all">
+  <div class="allposts-head"><h2 id="hfl-h-all" data-reveal>Alle 39 Beiträge</h2><p data-reveal style="--i:1">Nach Thema sortiert, die neuesten zuerst.</p></div>
+  <div class="allposts-groups"><div class="group" data-reveal style="--i:0"><h3>Rezepte <span class="cnt">6</span></h3><a class="row" href="https://www.healthyfitlifeshop.net/blog/3-gesunde-herbstrezepte-fuer-deine-woche-kuerbis-linsen-suppe-overnight-oats-protein-bowl/"><span class="l"><span class="dot" style="background:var(--sage)"></span><span class="n">3 Herbstrezepte für deine Woche</span></span><span class="v">22.10.2026</span></a><a class="row" href="https://www.healthyfitlifeshop.net/blog/4-proteinreiche-salat-rezepte-gesund-lecker-und-perfekt-fuer-einen-aktiven-lifestyle/"><span class="l"><span class="dot" style="background:var(--sage)"></span><span class="n">4 proteinreiche Salat-Rezepte</span></span><span class="v">02.08.2026</span></a><a class="row" href="https://www.healthyfitlifeshop.net/blog/4-schnelle-gesunde-sommerrezepte-frisch-leicht-und-in-nur-20-minuten-zubereitet/"><span class="l"><span class="dot" style="background:var(--sage)"></span><span class="n">4 schnelle und gesunde Sommerrezepte</span></span><span class="v">02.08.2026</span></a><a class="row" href="https://www.healthyfitlifeshop.net/blog/3-gesunde-abendessen-einfach-lecker-naehrstoffreich-fuer-deinen-alltag/"><span class="l"><span class="dot" style="background:var(--sage)"></span><span class="n">3 gesunde Abendessen für deinen Alltag</span></span><span class="v">30.07.2026</span></a><a class="row" href="https://www.healthyfitlifeshop.net/blog/6-gesunde-rezeptideen-fuer-jeden-tag-einfach-lecker-voller-naehrstoffe/"><span class="l"><span class="dot" style="background:var(--sage)"></span><span class="n">6 gesunde Rezeptideen für jeden Tag</span></span><span class="v">26.07.2026</span></a><a class="row" href="https://www.healthyfitlifeshop.net/blog/6-gesunde-rezeptideen-fuer-jeden-tag-einfach-lecker-naehrstoffreich/"><span class="l"><span class="dot" style="background:var(--sage)"></span><span class="n">6 nährstoffreiche Rezeptideen</span></span><span class="v">26.07.2026</span></a></div><div class="group" data-reveal style="--i:1"><h3>Küche und Meal Prep <span class="cnt">9</span></h3><a class="row" href="https://www.healthyfitlifeshop.net/blog/wmf-kult-x-mix-go-protein-shakes-und-smoothies-einfach-to-go/"><span class="l"><span class="dot" style="background:var(--gold)"></span><span class="n">WMF Kult X Mix &amp; Go im Test</span></span><span class="v">22.10.2026</span></a><a class="row" href="https://www.healthyfitlifeshop.net/blog/bento-lunchbox-warum-sie-perfekt-fuer-meal-prep-und-eine-gesunde-ernaehrung-ist/"><span class="l"><span class="dot" style="background:var(--gold)"></span><span class="n">Bento Lunchbox für Meal Prep</span></span><span class="v">25.08.2026</span></a><a class="row" href="https://www.healthyfitlifeshop.net/blog/magnetisches-gewuerzregal-mehr-ordnung-in-der-kueche-und-mehr-zeit-fuer-gesunde-ernaehrung/"><span class="l"><span class="dot" style="background:var(--gold)"></span><span class="n">Magnetisches Gewürzregal</span></span><span class="v">02.08.2026</span></a><a class="row" href="https://www.healthyfitlifeshop.net/blog/meal-prep-leicht-gemacht-warum-hochwertige-glas-frischhaltedosen-deine-gesunde-ernaehrung-unterstuetzen/"><span class="l"><span class="dot" style="background:var(--gold)"></span><span class="n">Glas-Frischhaltedosen für Meal Prep</span></span><span class="v">02.08.2026</span></a><a class="row" href="https://www.healthyfitlifeshop.net/blog/meal-prep-leicht-gemacht-warum-hochwertige-glas-frischhaltedosen-deine-gesunde-ernaehrung-revolutionieren-koennen/"><span class="l"><span class="dot" style="background:var(--gold)"></span><span class="n">Glas-Frischhaltedosen, Teil 2</span></span><span class="v">02.08.2026</span></a><a class="row" href="https://www.healthyfitlifeshop.net/blog/mehr-ordnung-in-der-kueche-warum-vorratsglaeser-der-schluessel-zu-einer-gesunden-ernaehrung-sind/"><span class="l"><span class="dot" style="background:var(--gold)"></span><span class="n">Vorratsgläser für mehr Ordnung</span></span><span class="v">02.08.2026</span></a><a class="row" href="https://www.healthyfitlifeshop.net/blog/schneller-kochen-gesuender-leben-warum-das-richtige-kuechenhelfer-set-deinen-alltag-erleichtert/"><span class="l"><span class="dot" style="background:var(--gold)"></span><span class="n">Das richtige Küchenhelfer-Set</span></span><span class="v">02.08.2026</span></a><a class="row" href="https://www.healthyfitlifeshop.net/blog/blenderbottle-shaker-der-perfekte-begleiter-fuer-deine-proteinshakes-%f0%9f%92%aa%f0%9f%a5%a4/"><span class="l"><span class="dot" style="background:var(--gold)"></span><span class="n">BlenderBottle Shaker</span></span><span class="v">19.07.2026</span></a><a class="row" href="https://www.healthyfitlifeshop.net/blog/warum-eine-gute-trinkflasche-dein-gesunder-lifestyle-game-veraendern-kann-%f0%9f%92%a7/"><span class="l"><span class="dot" style="background:var(--gold)"></span><span class="n">Warum eine gute Trinkflasche hilft</span></span><span class="v">19.07.2026</span></a></div><div class="group" data-reveal style="--i:2"><h3>Fitness und Regeneration <span class="cnt">8</span></h3><a class="row" href="https://www.healthyfitlifeshop.net/blog/blackroll-blackbox-faszienrollen-set-fuer-selbstmassage-und-regeneration/"><span class="l"><span class="dot" style="background:var(--oat)"></span><span class="n">BLACKROLL BLACKBOX Faszienrollen-Set</span></span><span class="v">22.10.2026</span></a><a class="row" href="https://www.healthyfitlifeshop.net/blog/gritin-fitnessbaender-ganzkoerpertraining-fuer-zu-hause-mit-5-widerstandsstufen/"><span class="l"><span class="dot" style="background:var(--oat)"></span><span class="n">Gritin Fitnessbänder für zu Hause</span></span><span class="v">22.10.2026</span></a><a class="row" href="https://www.healthyfitlifeshop.net/blog/polar-h10-praezise-herzfrequenzmessung-fuer-dein-training/"><span class="l"><span class="dot" style="background:var(--oat)"></span><span class="n">Polar H10 Herzfrequenzmessung</span></span><span class="v">22.10.2026</span></a><a class="row" href="https://www.healthyfitlifeshop.net/blog/wasserschuhe-der-praktische-begleiter-fuer-strand-pool-und-wassersport/"><span class="l"><span class="dot" style="background:var(--oat)"></span><span class="n">Wasserschuhe für Strand und Pool</span></span><span class="v">25.08.2026</span></a><a class="row" href="https://www.healthyfitlifeshop.net/blog/massagepistole-mit-30-geschwindigkeitsstufen-effektive-muskelregeneration-fuer-sport-und-alltag/"><span class="l"><span class="dot" style="background:var(--oat)"></span><span class="n">Massagepistole mit 30 Stufen</span></span><span class="v">30.07.2026</span></a><a class="row" href="https://www.healthyfitlifeshop.net/blog/funlife-vibrationsplatte-v6-v8-effektives-ganzkoerpertraining-fuer-zuhause/"><span class="l"><span class="dot" style="background:var(--oat)"></span><span class="n">FunLife Vibrationsplatte V6 / V8</span></span><span class="v">30.07.2026</span></a><a class="row" href="https://www.healthyfitlifeshop.net/blog/die-besten-sport-bhs-fuer-jedes-workout-komfort-halt-und-bewegungsfreiheit/"><span class="l"><span class="dot" style="background:var(--oat)"></span><span class="n">Die besten Sport-BHs</span></span><span class="v">19.07.2026</span></a><a class="row" href="https://www.healthyfitlifeshop.net/blog/oura-ring-der-smarte-ring-fuer-besseren-schlaf-mehr-gesundheit-und-ein-bewussteres-leben/"><span class="l"><span class="dot" style="background:var(--oat)"></span><span class="n">Ōura Ring für besseren Schlaf</span></span><span class="v">19.07.2026</span></a></div><div class="group" data-reveal style="--i:0"><h3>Nahrungsergänzung <span class="cnt">7</span></h3><a class="row" href="https://www.healthyfitlifeshop.net/blog/proteinriegel-im-alltag-wann-sie-sinnvoll-sind-und-worauf-du-beim-kauf-achten-solltest/"><span class="l"><span class="dot" style="background:var(--green)"></span><span class="n">Proteinriegel im Alltag</span></span><span class="v">25.08.2026</span></a><a class="row" href="https://www.healthyfitlifeshop.net/blog/more-protein-milkyccino-chocolate-crispy-cream-der-proteinreiche-kaffee-shake-fuer-deinen-aktiven-alltag/"><span class="l"><span class="dot" style="background:var(--green)"></span><span class="n">MORE Protein Milkyccino</span></span><span class="v">02.08.2026</span></a><a class="row" href="https://www.healthyfitlifeshop.net/blog/more-sleep-gummies-mit-melatonin-alles-ueber-inhaltsstoffe-anwendung-und-tipps-fuer-einen-erholsamen-schlaf/"><span class="l"><span class="dot" style="background:var(--green)"></span><span class="n">MORE Sleep Gummies mit Melatonin</span></span><span class="v">02.08.2026</span></a><a class="row" href="https://www.healthyfitlifeshop.net/blog/get-your-wellbeing-by-biogena-antistress-komplex-natuerliche-unterstuetzung-fuer-mehr-innere-balance/"><span class="l"><span class="dot" style="background:var(--green)"></span><span class="n">BIOGENA Antistress Komplex</span></span><span class="v">02.08.2026</span></a><a class="row" href="https://www.healthyfitlifeshop.net/blog/bachblueten-notfall-tropfen-n39-natuerliche-unterstuetzung-fuer-mehr-innere-ruhe-und-gelassenheit/"><span class="l"><span class="dot" style="background:var(--green)"></span><span class="n">Bachblüten Notfall Tropfen N°39</span></span><span class="v">02.08.2026</span></a><a class="row" href="https://www.healthyfitlifeshop.net/blog/braineffect-summer-collagen-fruchtiges-kollagenpulver-fuer-haut-haare-einen-aktiven-lifestyle/"><span class="l"><span class="dot" style="background:var(--green)"></span><span class="n">BRAINEFFECT Summer Collagen</span></span><span class="v">28.07.2026</span></a><a class="row" href="https://www.healthyfitlifeshop.net/blog/braineffect-daily-gut-pulver-unterstuetzung-fuer-deine-darmgesundheit-und-dein-wohlbefinden/"><span class="l"><span class="dot" style="background:var(--green)"></span><span class="n">BRAINEFFECT Daily GUT Pulver</span></span><span class="v">28.07.2026</span></a></div><div class="group" data-reveal style="--i:1"><h3>Haut und Haar <span class="cnt">4</span></h3><a class="row" href="https://www.healthyfitlifeshop.net/blog/rosmarinoel-fuer-die-haare-natuerliche-pflege-fuer-gesunde-kopfhaut-und-glaenzendes-haar/"><span class="l"><span class="dot" style="background:var(--sage)"></span><span class="n">Rosmarinöl für die Haare</span></span><span class="v">25.08.2026</span></a><a class="row" href="https://www.healthyfitlifeshop.net/blog/bio-collagen-gesichtsmasken-warum-sie-fester-bestandteil-einer-modernen-hautpflegeroutine-sein-koennen/"><span class="l"><span class="dot" style="background:var(--sage)"></span><span class="n">Bio-Collagen Gesichtsmasken</span></span><span class="v">25.08.2026</span></a><a class="row" href="https://www.healthyfitlifeshop.net/blog/the-ordinary-niacinamide-10-zink-1-fuer-ein-ebenmaessiges-und-klareres-hautbild/"><span class="l"><span class="dot" style="background:var(--sage)"></span><span class="n">The Ordinary Niacinamide-Serum</span></span><span class="v">23.07.2026</span></a><a class="row" href="https://www.healthyfitlifeshop.net/blog/loreal-paris-elvive-extraordinary-oil-miracle-hair-serum-fuer-glaenzendes-und-geschmeidiges-haar/"><span class="l"><span class="dot" style="background:var(--sage)"></span><span class="n">L&#x27;Oréal Elvive Extraordinary Oil</span></span><span class="v">21.07.2026</span></a></div><div class="group" data-reveal style="--i:2"><h3>Familie und Wohlbefinden <span class="cnt">5</span></h3><a class="row" href="https://www.healthyfitlifeshop.net/blog/heilung-und-gesundheit-beginnen-im-kopf-wie-deine-gedanken-dein-wohlbefinden-beeinflussen/"><span class="l"><span class="dot" style="background:var(--gold)"></span><span class="n">Heilung beginnt im Kopf</span></span><span class="v">22.10.2026</span></a><a class="row" href="https://www.healthyfitlifeshop.net/blog/braun-thermoscan-7-fiebermessen-leicht-gemacht-fuer-die-ganze-familie/"><span class="l"><span class="dot" style="background:var(--gold)"></span><span class="n">Braun ThermoScan 7</span></span><span class="v">22.10.2026</span></a><a class="row" href="https://www.healthyfitlifeshop.net/blog/philips-avent-digitalthermometer-kleine-blume-grosse-hilfe/"><span class="l"><span class="dot" style="background:var(--gold)"></span><span class="n">Philips AVENT Digitalthermometer</span></span><span class="v">22.10.2026</span></a><a class="row" href="https://www.healthyfitlifeshop.net/blog/warum-hitze-im-auto-belastend-sein-kann/"><span class="l"><span class="dot" style="background:var(--gold)"></span><span class="n">Warum Hitze im Auto belastend ist</span></span><span class="v">30.07.2026</span></a><a class="row" href="https://www.healthyfitlifeshop.net/blog/frida-mom-upside-down-peri-bottle-die-praktische-intimdusche-fuer-die-zeit-nach-der-geburt/"><span class="l"><span class="dot" style="background:var(--gold)"></span><span class="n">Frida Mom Upside Down Peri Bottle</span></span><span class="v">19.07.2026</span></a></div></div>
+</section>
+
+<section class="related" aria-labelledby="hfl-h-rel">
+  <h2 id="hfl-h-rel" data-reveal>Rezepte aus der Serie</h2>
+  <div class="rel-row"><a class="rel" href="https://www.healthyfitlifeshop.net/gesunde-rezepte/#kichererbsen-kuerbis-curry" data-reveal style="--i:0"><span class="sw f-green"><img src="https://www.healthyfitlifeshop.net/wp-content/uploads/go-x/u/327b9f60-3f87-42c3-a030-62a331fbd0a2/image.jpg" width="800" height="1000" alt="Kichererbsen-Kürbis-Curry" decoding="async"></span><span class="rel-name">Kichererbsen-Kürbis-Curry</span><span class="rel-meta">Teil 4 · 35 Min</span></a><a class="rel" href="https://www.healthyfitlifeshop.net/gesunde-rezepte/#quinoa-bowl" data-reveal style="--i:1"><span class="sw f-sage"><img src="https://www.healthyfitlifeshop.net/wp-content/uploads/go-x/u/2b27bbc2-d6e5-4096-9aa2-27be1d03b4e9/image.jpg" width="800" height="1000" alt="Quinoa-Bowl mit Röstkichererbsen" decoding="async"></span><span class="rel-name">Quinoa-Bowl mit Röstkichererbsen</span><span class="rel-meta">Teil 5 · 30 Min</span></a><a class="rel" href="https://www.healthyfitlifeshop.net/gesunde-rezepte/#shakshuka" data-reveal style="--i:2"><span class="sw f-oat"><img src="https://www.healthyfitlifeshop.net/wp-content/uploads/go-x/u/8900cf9a-14fa-416c-97f4-c243a8cfc14d/image.jpg" width="800" height="1000" alt="Shakshuka mit Feta" decoding="async"></span><span class="rel-name">Shakshuka mit Feta</span><span class="rel-meta">Teil 7 · 25 Min</span></a><a class="rel" href="https://www.healthyfitlifeshop.net/gesunde-rezepte/#beeren-hafer-crumble" data-reveal style="--i:3"><span class="sw f-sage"><img src="https://www.healthyfitlifeshop.net/wp-content/uploads/go-x/u/a7c65f19-ef4b-485c-b06b-ec9866fc182c/image.jpg" width="800" height="1000" alt="Beeren-Hafer-Crumble" decoding="async"></span><span class="rel-name">Beeren-Hafer-Crumble</span><span class="rel-meta">Teil 9 · 10 Min + 25 Min backen</span></a></div>
+</section>
+</div>
+<script>(function(){var root=document.getElementById('hfl');if(!root||root.dataset.on)return;root.dataset.on='1';root.classList.add('js');
+
+
+
+
+
+
+(() => {
+  const targets = root.querySelectorAll('[data-reveal]');
+  if (!targets.length) return;
+  if (!('IntersectionObserver' in window)) { targets.forEach((el) => el.classList.add('is-in')); return; }
+  const io = new IntersectionObserver((entries) => {
+    for (const entry of entries) {
+      if (!entry.isIntersecting) continue;
+      entry.target.classList.add('is-in');
+      io.unobserve(entry.target);
+    }
+  }, { rootMargin: '0px 0px -12% 0px', threshold: 0.1 });
+  targets.forEach((el) => io.observe(el));
+  
+  window.addEventListener('load', () => setTimeout(() => {
+    targets.forEach((el) => { const r = el.getBoundingClientRect(); if (r.top < innerHeight && r.bottom > 0) el.classList.add('is-in'); });
+  }, 2500));
+})();
+
+
+
+
+
+
+(() => {
+  const chapters = root.querySelectorAll('[data-ink]');
+  if (!chapters.length || !('IntersectionObserver' in window)) return;
+  const io = new IntersectionObserver((entries) => {
+    for (const entry of entries) if (entry.isIntersecting) document.documentElement.style.setProperty('--header-ink', entry.target.dataset.ink);
+  }, { rootMargin: '0px 0px -92% 0px', threshold: 0 });
+  chapters.forEach((el) => io.observe(el));
+})();
+
+
+(() => {
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  
+  const plinth = root.querySelector('[data-plinth]');
+  if (plinth && !reduce) {
+    const figs = [...plinth.querySelectorAll('figure')];
+    const capName = root.querySelector('[data-cap-name]');
+    const capPart = root.querySelector('[data-cap-part]');
+    let i = 0, timer = null;
+    const show = (n) => {
+      figs[i].classList.remove('on');
+      i = n % figs.length;
+      const f = figs[i];
+      const img = f.querySelector('img');
+      if (img.loading === 'lazy') img.loading = 'eager';
+      f.classList.add('on');
+      if (capName) capName.textContent = f.dataset.name;
+      if (capPart) capPart.textContent = f.dataset.part;
+    };
+    const start = () => { if (!timer) timer = setInterval(() => show(i + 1), 5200); };
+    const stop = () => { clearInterval(timer); timer = null; };
+    document.addEventListener('visibilitychange', () => (document.hidden ? stop() : start()));
+    
+    addEventListener('load', () => figs.forEach((f) => { const im = f.querySelector('img'); im.loading = 'eager'; }));
+    start();
+  }
+
+  
+  const counter = root.querySelector('[data-counter]');
+  if (counter) {
+    const tiles = [...root.querySelectorAll('[data-plants]')];
+    const num = counter.querySelector('[data-num]');
+    const list = counter.querySelector('[data-list]');
+    const note = counter.querySelector('[data-note]');
+    const meter = counter.querySelector('.meter');
+    const KEY = 'hfl-week';
+    let picked = new Set();
+    try { picked = new Set(JSON.parse(localStorage.getItem(KEY) || '[]')); } catch {}
+    const render = () => {
+      const plants = new Set();
+      tiles.forEach((t) => {
+        const on = picked.has(t.dataset.slug);
+        t.setAttribute('aria-pressed', String(on));
+        const st = root.querySelector(`[data-state="${t.dataset.slug}"]`);
+        if (st) st.textContent = on ? 'In deiner Woche' : '';
+        if (on) t.dataset.plants.split('|').forEach((p) => plants.add(p));
+      });
+      const n = plants.size;
+      num.textContent = n;
+      meter.style.setProperty('--p', Math.min(n / 30, 1));
+      counter.classList.toggle('full', n >= 30);
+      list.textContent = n ? [...plants].sort((a, b) => a.localeCompare(b, 'de')).join(', ') : 'Noch nichts ausgewählt.';
+      note.textContent = n === 0 ? 'Tippe auf die Gerichte, die du diese Woche kochen willst.'
+        : n >= 30 ? 'Geschafft: 30 verschiedene Pflanzen in einer Woche.'
+        : `Noch ${30 - n} bis zu deinen 30 Pflanzen.`;
+      try { localStorage.setItem(KEY, JSON.stringify([...picked])); } catch {}
+    };
+    tiles.forEach((t) => t.addEventListener('click', () => {
+      const s = t.dataset.slug;
+      picked.has(s) ? picked.delete(s) : picked.add(s);
+      render();
+    }));
+    counter.querySelector('[data-all]').addEventListener('click', () => { tiles.forEach((t) => picked.add(t.dataset.slug)); render(); });
+    counter.querySelector('[data-clear]').addEventListener('click', () => { picked.clear(); render(); });
+    counter.hidden = false;
+    render();
+  }
+
+  
+  root.querySelectorAll('video[data-loop]').forEach((v) => {
+    if (reduce) { v.removeAttribute('autoplay'); v.pause(); return; }
+    const io = new IntersectionObserver(([e]) => (e.isIntersecting ? v.play().catch(() => {}) : v.pause()), { threshold: 0.2 });
+    io.observe(v);
+  });
+})();
+
+})();</script>
