@@ -3,8 +3,8 @@
 #hfl{-webkit-text-size-adjust: 100%; text-size-adjust: 100%; scroll-behavior: auto;}
 #hfl{margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font-text); font-size: var(--step-body); line-height: 1.5; font-kerning: normal; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;}
 #hfl h1,#hfl h2,#hfl h3,#hfl p,#hfl figure,#hfl dl,#hfl dd{margin: 0;}
-#hfl img,#hfl video{display: block; max-width: 100%;}
-#hfl img,#hfl video{height: auto; background: var(--surface);}
+#hfl img{display: block; max-width: 100%;}
+#hfl img{height: auto; background: var(--surface);}
 #hfl button{font: inherit; color: inherit;}
 #hfl button{background: none; border: 0; padding: 0; cursor: pointer;}
 #hfl a{color: inherit;}
@@ -23,10 +23,6 @@
 #hfl.js [data-reveal].is-in{opacity: 1; transform: none;}}
 @keyframes ad-rise{to { opacity: 1; transform: none; }}
 @keyframes ad-line{to { transform: none; }}
-@font-face{font-family: "Lora"; src: url("https://cdn.jsdelivr.net/gh/healthyfitlife/healthyfitlife-assets@f559bac/fonts/Lora-Variable.woff") format("woff"); font-weight: 400 700; font-display: swap;}
-@font-face{font-family: "Poppins"; src: url("https://cdn.jsdelivr.net/gh/healthyfitlife/healthyfitlife-assets@f559bac/fonts/Poppins-Regular.woff") format("woff"); font-weight: 400; font-display: swap;}
-@font-face{font-family: "Poppins"; src: url("https://cdn.jsdelivr.net/gh/healthyfitlife/healthyfitlife-assets@f559bac/fonts/Poppins-Medium.woff") format("woff"); font-weight: 500; font-display: swap;}
-@font-face{font-family: "Poppins"; src: url("https://cdn.jsdelivr.net/gh/healthyfitlife/healthyfitlife-assets@f559bac/fonts/Poppins-Bold.woff") format("woff"); font-weight: 700; font-display: swap;}
 #hfl{--bg: #f1efe9; --surface: #e6e1d6; --ink: #1f3a2d; --muted: #3d5246; --accent: #f2c14e; --accent-ink: #1f3a2d; --paper: #fafaf7; --sage: #a9bb9b; --sage-ink: #1f3a2d; --gold: #f2c14e; --gold-ink: #1f3a2d; --oat: #e3d6bf; --oat-ink: #1f3a2d; --green: #1f3a2d; --green-ink: #f1efe9; --font-display: "Lora", Georgia, serif; --font-text: "Poppins", system-ui, sans-serif; --step-small: 0.875rem; --step-item: clamp(1.125rem, 1rem + 0.35vw, 1.375rem); --step-body: 1.0625rem; --step-lead: var(--step-item); --step-head: clamp(2.125rem, 1.4rem + 2.9vw, 3.75rem); --step-display: clamp(3.25rem, 1.2rem + 6.4vw, 7.25rem); --margin: clamp(1.25rem, 3.4vw, 3.5rem); --gutter: clamp(0.75rem, 1.6vw, 1.5rem); --section: clamp(7.5rem, 14vw, 15rem); --radius: 0px;}
 #hfl{overflow-x: hidden;}
 #hfl .tnum{font-variant-numeric: tabular-nums;}
@@ -105,7 +101,7 @@
 #hfl .panel.gold{background: var(--gold); color: var(--gold-ink);}
 #hfl .panel .obj{position: absolute; left: 50%; top: 0; width: 82%; transform: translateX(-50%);}
 #hfl .panel.green .obj{aspect-ratio: 4 / 5; top: -10%; width: 58%; left: auto; right: 8%; transform: none;}
-#hfl .panel.green video,#hfl .panel.green .obj img{width: 100%; height: 100%; object-fit: cover;}
+#hfl .panel.green .obj img{width: 100%; height: 100%; object-fit: cover;}
 #hfl .panel.gold .obj{width: 112%; top: -14%; mix-blend-mode: multiply;}
 #hfl .panel h2{position: absolute; top: 1.75rem; left: 1.75rem; font-size: var(--step-head); line-height: 1.05; letter-spacing: -0.02em; font-weight: 600; z-index: 2;}
 #hfl .panel-row{position: relative; z-index: 2; display: flex; justify-content: space-between; align-items: flex-end; gap: 1.25rem; padding: 1.75rem;}
@@ -231,7 +227,7 @@
 #hfl :focus-visible{outline-color: var(--ink);}
 #hfl .plan :focus-visible,#hfl .panel.green :focus-visible{outline-color: var(--gold);}
 @media (max-width: 52em){#hfl .journal-head p{max-width: none;}}
-#hfl{position:relative;width:100vw;max-width:100vw;margin-left:calc(50% - 50vw);text-align:left;overflow-x:clip}#hfl h1,#hfl h2,#hfl h3,#hfl p,#hfl a,#hfl dt,#hfl dd,#hfl summary,#hfl button,#hfl span{letter-spacing:normal;text-transform:none}#hfl h1,#hfl h2,#hfl h3{color:inherit}#hfl img,#hfl video{border:0;border-radius:0;box-shadow:none}@supports selector(:has(a)){.section-inner-width:has(#hfl),.section-content:has(#hfl),.grid-row-root:has(#hfl),.grid-column-root:has(#hfl),.module-container-root:has(#hfl),.text-root:has(#hfl),.text-root:has(#hfl)>div{max-width:none!important;width:100%!important;flex:1 1 100%!important;padding:0!important;margin:0!important;overflow:visible!important}.grid-row-root:has(#hfl)>.grid-column-root:not(:has(#hfl)){display:none!important}#hfl{width:100%;max-width:none;margin-left:0}}</style>
+#hfl{position:relative;width:100vw;max-width:100vw;margin-left:calc(50% - 50vw);text-align:left;overflow-x:clip}#hfl h1,#hfl h2,#hfl h3,#hfl p,#hfl a,#hfl dt,#hfl dd,#hfl summary,#hfl button,#hfl span{letter-spacing:normal;text-transform:none}#hfl h1,#hfl h2,#hfl h3{color:inherit}#hfl img,#hfl video{border:0;border-radius:0;box-shadow:none}@supports selector(:has(a)){.section-inner-width:has(#hfl),.section-content:has(#hfl),.grid-row-root:has(#hfl),.grid-column-root:has(#hfl),.module-container-root:has(#hfl),.text-root:has(#hfl),.text-root:has(#hfl)>div{max-width:none!important;width:100%!important;flex:1 1 100%!important;padding:0!important;margin:0!important;overflow:visible!important}.grid-row-root:has(#hfl)>.grid-column-root:not(:has(#hfl)){display:none!important}#hfl{width:100%;max-width:none;margin-left:0}main>.section-root:has(#hfl)~.section-root{display:none!important}}</style>
 <div id="hfl" class="hfl">
 
 <section class="hero" aria-labelledby="hfl-h1">
@@ -244,7 +240,7 @@
     </div>
   </div>
   <div class="plinth-wrap" data-rise style="--i:2">
-    <div class="plinth" data-plinth><figure class="on" data-name="Apfel-Zimt Overnight Oats" data-part="Teil 1 · 5 Min + über Nacht"><img src="https://cdn.jsdelivr.net/gh/healthyfitlife/healthyfitlife-assets@f559bac/img/t1-sq.jpg" width="900" height="900" alt="Apfel-Zimt Overnight Oats" decoding="async"></figure><figure class="" data-name="Kürbis-Linsen-Suppe" data-part="Teil 2 · 30 Min"><img src="https://cdn.jsdelivr.net/gh/healthyfitlife/healthyfitlife-assets@f559bac/img/t2-sq.jpg" width="900" height="900" alt="Kürbis-Linsen-Suppe" loading="lazy" decoding="async"></figure><figure class="" data-name="Kiwi-Chia-Pudding" data-part="Teil 3 · 5 Min + 2 Std"><img src="https://cdn.jsdelivr.net/gh/healthyfitlife/healthyfitlife-assets@f559bac/img/t3-sq.jpg" width="900" height="900" alt="Kiwi-Chia-Pudding" loading="lazy" decoding="async"></figure><figure class="" data-name="Kichererbsen-Kürbis-Curry" data-part="Teil 4 · 35 Min"><img src="https://cdn.jsdelivr.net/gh/healthyfitlife/healthyfitlife-assets@f559bac/img/t4-sq.jpg" width="900" height="900" alt="Kichererbsen-Kürbis-Curry" loading="lazy" decoding="async"></figure><figure class="" data-name="Quinoa-Bowl mit Röstkichererbsen" data-part="Teil 5 · 30 Min"><img src="https://cdn.jsdelivr.net/gh/healthyfitlife/healthyfitlife-assets@f559bac/img/t5-sq.jpg" width="900" height="900" alt="Quinoa-Bowl mit Röstkichererbsen" loading="lazy" decoding="async"></figure><figure class="" data-name="Grüner Kefir-Smoothie" data-part="Teil 6 · 5 Min"><img src="https://cdn.jsdelivr.net/gh/healthyfitlife/healthyfitlife-assets@f559bac/img/t6-sq.jpg" width="900" height="900" alt="Grüner Kefir-Smoothie" loading="lazy" decoding="async"></figure><figure class="" data-name="Shakshuka mit Feta" data-part="Teil 7 · 25 Min"><img src="https://cdn.jsdelivr.net/gh/healthyfitlife/healthyfitlife-assets@f559bac/img/t7-sq.jpg" width="900" height="900" alt="Shakshuka mit Feta" loading="lazy" decoding="async"></figure><figure class="" data-name="Lachs mit Ofengemüse" data-part="Teil 8 · 35 Min"><img src="https://cdn.jsdelivr.net/gh/healthyfitlife/healthyfitlife-assets@f559bac/img/t8-sq.jpg" width="900" height="900" alt="Lachs mit Ofengemüse" loading="lazy" decoding="async"></figure><figure class="" data-name="Beeren-Hafer-Crumble" data-part="Teil 9 · 10 Min + 25 Min backen"><img src="https://cdn.jsdelivr.net/gh/healthyfitlife/healthyfitlife-assets@f559bac/img/t9-sq.jpg" width="900" height="900" alt="Beeren-Hafer-Crumble" loading="lazy" decoding="async"></figure></div>
+    <div class="plinth" data-plinth><figure class="on" data-name="Apfel-Zimt Overnight Oats" data-part="Teil 1 · 5 Min + über Nacht"><img src="https://www.healthyfitlifeshop.net/wp-content/uploads/go-x/u/b31a8e67-d3f1-4012-aa09-df2cd22bb513/image.jpg" width="900" height="900" alt="Apfel-Zimt Overnight Oats" decoding="async"></figure><figure class="" data-name="Kürbis-Linsen-Suppe" data-part="Teil 2 · 30 Min"><img src="https://www.healthyfitlifeshop.net/wp-content/uploads/go-x/u/edbd4052-4e86-41d1-b98a-5d64215e816f/image.jpg" width="900" height="900" alt="Kürbis-Linsen-Suppe" loading="lazy" decoding="async"></figure><figure class="" data-name="Kiwi-Chia-Pudding" data-part="Teil 3 · 5 Min + 2 Std"><img src="https://www.healthyfitlifeshop.net/wp-content/uploads/go-x/u/ebc8fcfd-487f-4c05-b39e-206b0aa4135f/image.jpg" width="900" height="900" alt="Kiwi-Chia-Pudding" loading="lazy" decoding="async"></figure><figure class="" data-name="Kichererbsen-Kürbis-Curry" data-part="Teil 4 · 35 Min"><img src="https://www.healthyfitlifeshop.net/wp-content/uploads/go-x/u/56fa7e35-a760-4cda-8b42-7d00c6fd164e/image.jpg" width="900" height="900" alt="Kichererbsen-Kürbis-Curry" loading="lazy" decoding="async"></figure><figure class="" data-name="Quinoa-Bowl mit Röstkichererbsen" data-part="Teil 5 · 30 Min"><img src="https://www.healthyfitlifeshop.net/wp-content/uploads/go-x/u/55aec357-da14-450d-807b-4d712e0852e1/image.jpg" width="900" height="900" alt="Quinoa-Bowl mit Röstkichererbsen" loading="lazy" decoding="async"></figure><figure class="" data-name="Grüner Kefir-Smoothie" data-part="Teil 6 · 5 Min"><img src="https://www.healthyfitlifeshop.net/wp-content/uploads/go-x/u/6a579704-f55a-4093-b890-9e6c07d79012/image.jpg" width="900" height="900" alt="Grüner Kefir-Smoothie" loading="lazy" decoding="async"></figure><figure class="" data-name="Shakshuka mit Feta" data-part="Teil 7 · 25 Min"><img src="https://www.healthyfitlifeshop.net/wp-content/uploads/go-x/u/0cd69aed-6fe3-46f2-bb9a-a2e8f6dec8c8/image.jpg" width="900" height="900" alt="Shakshuka mit Feta" loading="lazy" decoding="async"></figure><figure class="" data-name="Lachs mit Ofengemüse" data-part="Teil 8 · 35 Min"><img src="https://www.healthyfitlifeshop.net/wp-content/uploads/go-x/u/b5fc02b9-295f-454e-baef-b463189b7a97/image.jpg" width="900" height="900" alt="Lachs mit Ofengemüse" loading="lazy" decoding="async"></figure><figure class="" data-name="Beeren-Hafer-Crumble" data-part="Teil 9 · 10 Min + 25 Min backen"><img src="https://www.healthyfitlifeshop.net/wp-content/uploads/go-x/u/e43b74d9-f612-471c-8c96-6dd3976058b4/image.jpg" width="900" height="900" alt="Beeren-Hafer-Crumble" loading="lazy" decoding="async"></figure></div>
     <p class="plinth-cap small"><span data-cap-name>Apfel-Zimt Overnight Oats</span><span data-cap-part>Teil 1 · 5 Min + über Nacht</span></p>
   </div>
 </section>
@@ -265,63 +261,63 @@
   <div class="tiles">
     <article class="spec" data-reveal style="--i:0">
       <button class="tile f-sage" type="button" aria-pressed="false" data-slug="apfel-zimt-overnight-oats" data-plants="Hafer|Leinsamen|Chiasamen|Apfel|Walnuss" aria-label="Apfel-Zimt Overnight Oats: zur Woche hinzufügen">
-        <img src="https://cdn.jsdelivr.net/gh/healthyfitlife/healthyfitlife-assets@f559bac/img/t1-45.jpg" width="800" height="1000" alt="Apfel-Zimt Overnight Oats" loading="lazy" decoding="async">
+        <img src="https://www.healthyfitlifeshop.net/wp-content/uploads/go-x/u/3c29d204-7daf-4fa3-91ce-9211cde4f94b/image.jpg" width="800" height="1000" alt="Apfel-Zimt Overnight Oats" loading="lazy" decoding="async">
         <span class="tick" aria-hidden="true">+</span>
       </button>
       <h3><a href="https://www.healthyfitlifeshop.net/gesunde-rezepte/">Apfel-Zimt Overnight Oats</a></h3>
       <p>Teil 1 · 5 Min + über Nacht · 5 Pflanzen <span class="state" data-state="apfel-zimt-overnight-oats"></span></p>
     </article><article class="spec" data-reveal style="--i:1">
       <button class="tile f-gold" type="button" aria-pressed="false" data-slug="kuerbis-linsen-suppe" data-plants="Hokkaido-Kürbis|Rote Linsen|Zwiebel|Knoblauch|Ingwer|Kürbiskerne" aria-label="Kürbis-Linsen-Suppe: zur Woche hinzufügen">
-        <img src="https://cdn.jsdelivr.net/gh/healthyfitlife/healthyfitlife-assets@f559bac/img/t2-45.jpg" width="800" height="1000" alt="Kürbis-Linsen-Suppe" loading="lazy" decoding="async">
+        <img src="https://www.healthyfitlifeshop.net/wp-content/uploads/go-x/u/e57590b5-7c95-4131-873d-b423d0251c21/image.jpg" width="800" height="1000" alt="Kürbis-Linsen-Suppe" loading="lazy" decoding="async">
         <span class="tick" aria-hidden="true">+</span>
       </button>
       <h3><a href="https://www.healthyfitlifeshop.net/gesunde-rezepte/">Kürbis-Linsen-Suppe</a></h3>
       <p>Teil 2 · 30 Min · 6 Pflanzen <span class="state" data-state="kuerbis-linsen-suppe"></span></p>
     </article><article class="spec" data-reveal style="--i:2">
       <button class="tile f-oat" type="button" aria-pressed="false" data-slug="kiwi-chia-pudding" data-plants="Chiasamen|Kiwi|Kürbiskerne" aria-label="Kiwi-Chia-Pudding: zur Woche hinzufügen">
-        <img src="https://cdn.jsdelivr.net/gh/healthyfitlife/healthyfitlife-assets@f559bac/img/t3-45.jpg" width="800" height="1000" alt="Kiwi-Chia-Pudding" loading="lazy" decoding="async">
+        <img src="https://www.healthyfitlifeshop.net/wp-content/uploads/go-x/u/ae69a947-778a-4f9f-80a1-29f2832a8c43/image.jpg" width="800" height="1000" alt="Kiwi-Chia-Pudding" loading="lazy" decoding="async">
         <span class="tick" aria-hidden="true">+</span>
       </button>
       <h3><a href="https://www.healthyfitlifeshop.net/gesunde-rezepte/">Kiwi-Chia-Pudding</a></h3>
       <p>Teil 3 · 5 Min + 2 Std · 3 Pflanzen <span class="state" data-state="kiwi-chia-pudding"></span></p>
     </article><article class="spec big" data-reveal style="--i:0">
       <button class="tile f-green" type="button" aria-pressed="false" data-slug="kichererbsen-kuerbis-curry" data-plants="Kichererbsen|Hokkaido-Kürbis|Spinat|Zwiebel|Knoblauch|Ingwer|Naturreis|Limette|Schnittlauch" aria-label="Kichererbsen-Kürbis-Curry: zur Woche hinzufügen">
-        <img src="https://cdn.jsdelivr.net/gh/healthyfitlife/healthyfitlife-assets@f559bac/img/t4-45.jpg" width="800" height="1000" alt="Kichererbsen-Kürbis-Curry" loading="lazy" decoding="async">
+        <img src="https://www.healthyfitlifeshop.net/wp-content/uploads/go-x/u/327b9f60-3f87-42c3-a030-62a331fbd0a2/image.jpg" width="800" height="1000" alt="Kichererbsen-Kürbis-Curry" loading="lazy" decoding="async">
         <span class="tick" aria-hidden="true">+</span>
       </button>
       <h3><a href="https://www.healthyfitlifeshop.net/gesunde-rezepte/">Kichererbsen-Kürbis-Curry</a></h3>
       <p>Teil 4 · 35 Min · 9 Pflanzen <span class="state" data-state="kichererbsen-kuerbis-curry"></span></p>
     </article><article class="spec" data-reveal style="--i:1">
       <button class="tile f-sage" type="button" aria-pressed="false" data-slug="quinoa-bowl" data-plants="Quinoa|Kichererbsen|Grünkohl|Zuckerschoten|Avocado|Rote Zwiebel|Pistazien|Zitrone" aria-label="Quinoa-Bowl mit Röstkichererbsen: zur Woche hinzufügen">
-        <img src="https://cdn.jsdelivr.net/gh/healthyfitlife/healthyfitlife-assets@f559bac/img/t5-45.jpg" width="800" height="1000" alt="Quinoa-Bowl mit Röstkichererbsen" loading="lazy" decoding="async">
+        <img src="https://www.healthyfitlifeshop.net/wp-content/uploads/go-x/u/2b27bbc2-d6e5-4096-9aa2-27be1d03b4e9/image.jpg" width="800" height="1000" alt="Quinoa-Bowl mit Röstkichererbsen" loading="lazy" decoding="async">
         <span class="tick" aria-hidden="true">+</span>
       </button>
       <h3><a href="https://www.healthyfitlifeshop.net/gesunde-rezepte/">Quinoa-Bowl mit Röstkichererbsen</a></h3>
       <p>Teil 5 · 30 Min · 8 Pflanzen <span class="state" data-state="quinoa-bowl"></span></p>
     </article><article class="spec" data-reveal style="--i:2">
       <button class="tile f-gold" type="button" aria-pressed="false" data-slug="gruener-kefir-smoothie" data-plants="Spinat|Banane|Ingwer|Leinsamen" aria-label="Grüner Kefir-Smoothie: zur Woche hinzufügen">
-        <img src="https://cdn.jsdelivr.net/gh/healthyfitlife/healthyfitlife-assets@f559bac/img/t6-45.jpg" width="800" height="1000" alt="Grüner Kefir-Smoothie" loading="lazy" decoding="async">
+        <img src="https://www.healthyfitlifeshop.net/wp-content/uploads/go-x/u/be7a901c-d30d-425c-bc04-2e90ea20c96b/image.jpg" width="800" height="1000" alt="Grüner Kefir-Smoothie" loading="lazy" decoding="async">
         <span class="tick" aria-hidden="true">+</span>
       </button>
       <h3><a href="https://www.healthyfitlifeshop.net/gesunde-rezepte/">Grüner Kefir-Smoothie</a></h3>
       <p>Teil 6 · 5 Min · 4 Pflanzen <span class="state" data-state="gruener-kefir-smoothie"></span></p>
     </article><article class="spec" data-reveal style="--i:0">
       <button class="tile f-oat" type="button" aria-pressed="false" data-slug="shakshuka" data-plants="Zwiebel|Paprika|Knoblauch|Tomate|Petersilie" aria-label="Shakshuka mit Feta: zur Woche hinzufügen">
-        <img src="https://cdn.jsdelivr.net/gh/healthyfitlife/healthyfitlife-assets@f559bac/img/t7-45.jpg" width="800" height="1000" alt="Shakshuka mit Feta" loading="lazy" decoding="async">
+        <img src="https://www.healthyfitlifeshop.net/wp-content/uploads/go-x/u/8900cf9a-14fa-416c-97f4-c243a8cfc14d/image.jpg" width="800" height="1000" alt="Shakshuka mit Feta" loading="lazy" decoding="async">
         <span class="tick" aria-hidden="true">+</span>
       </button>
       <h3><a href="https://www.healthyfitlifeshop.net/gesunde-rezepte/">Shakshuka mit Feta</a></h3>
       <p>Teil 7 · 25 Min · 5 Pflanzen <span class="state" data-state="shakshuka"></span></p>
     </article><article class="spec" data-reveal style="--i:1">
       <button class="tile f-green" type="button" aria-pressed="false" data-slug="lachs-ofengemuese" data-plants="Brokkoli|Rote Zwiebel|Süßkartoffel|Zitrone" aria-label="Lachs mit Ofengemüse: zur Woche hinzufügen">
-        <img src="https://cdn.jsdelivr.net/gh/healthyfitlife/healthyfitlife-assets@f559bac/img/t8-45.jpg" width="800" height="1000" alt="Lachs mit Ofengemüse" loading="lazy" decoding="async">
+        <img src="https://www.healthyfitlifeshop.net/wp-content/uploads/go-x/u/d53ccb62-97f2-4274-a74f-11c8e5f3da51/image.jpg" width="800" height="1000" alt="Lachs mit Ofengemüse" loading="lazy" decoding="async">
         <span class="tick" aria-hidden="true">+</span>
       </button>
       <h3><a href="https://www.healthyfitlifeshop.net/gesunde-rezepte/">Lachs mit Ofengemüse</a></h3>
       <p>Teil 8 · 35 Min · 4 Pflanzen <span class="state" data-state="lachs-ofengemuese"></span></p>
     </article><article class="spec" data-reveal style="--i:2">
       <button class="tile f-sage" type="button" aria-pressed="false" data-slug="beeren-hafer-crumble" data-plants="Heidelbeere|Himbeere|Hafer|Walnuss" aria-label="Beeren-Hafer-Crumble: zur Woche hinzufügen">
-        <img src="https://cdn.jsdelivr.net/gh/healthyfitlife/healthyfitlife-assets@f559bac/img/t9-45.jpg" width="800" height="1000" alt="Beeren-Hafer-Crumble" loading="lazy" decoding="async">
+        <img src="https://www.healthyfitlifeshop.net/wp-content/uploads/go-x/u/a7c65f19-ef4b-485c-b06b-ec9866fc182c/image.jpg" width="800" height="1000" alt="Beeren-Hafer-Crumble" loading="lazy" decoding="async">
         <span class="tick" aria-hidden="true">+</span>
       </button>
       <h3><a href="https://www.healthyfitlifeshop.net/gesunde-rezepte/">Beeren-Hafer-Crumble</a></h3>
@@ -333,14 +329,14 @@
 <section class="two" aria-labelledby="hfl-h-wege">
   <div class="panel green">
     <h2 id="hfl-h-wege">Zwei Wege</h2>
-    <div class="obj"><video data-loop muted loop playsinline autoplay preload="metadata" poster="https://cdn.jsdelivr.net/gh/healthyfitlife/healthyfitlife-assets@f559bac/video/serie-curry-poster.jpg" width="720" height="900" aria-label="Kichererbsen-Kürbis-Curry wird gekocht, aus Teil 4 der Serie"><source src="https://cdn.jsdelivr.net/gh/healthyfitlife/healthyfitlife-assets@f559bac/video/serie-curry.mp4" type="video/mp4"></video></div>
+    <div class="obj"><img src="https://www.healthyfitlifeshop.net/wp-content/uploads/go-x/u/9dfb261c-28e4-4696-bcec-9f858371f64b/image.jpg" width="720" height="900" alt="Kichererbsen-Kürbis-Curry aus Teil 4 der Serie" loading="lazy" decoding="async"></div>
     <div class="panel-row">
       <div><p class="name">Die Videoserie</p><p class="fact">9 Rezepte, je etwa 20 Sekunden</p></div>
       <div class="acts"><a class="button paper" href="https://www.healthyfitlifeshop.net/gesunde-rezepte/">Rezepte lesen</a></div>
     </div>
   </div>
   <div class="panel gold">
-    <div class="obj"><img src="https://cdn.jsdelivr.net/gh/healthyfitlife/healthyfitlife-assets@f559bac/img/darm-reset-mockup.jpg" width="1100" height="1100" alt="Darm-Reset: das PDF auf Tablet und als Ausdruck" loading="lazy" decoding="async"></div>
+    <div class="obj"><img src="https://www.healthyfitlifeshop.net/wp-content/uploads/go-x/u/f94f4f51-7b40-4c25-a587-f72d62c0efe8/image.jpg" width="1100" height="1100" alt="Darm-Reset: das PDF auf Tablet und als Ausdruck" loading="lazy" decoding="async"></div>
     <div class="panel-row">
       <div><p class="name">Darm-Reset</p><p class="fact">4-Wochen-Plan als PDF · 9 €</p></div>
       <div class="acts"><a class="button paper" href="https://www.healthyfitlifeshop.net/shop/">Was drin ist</a><a class="button ink" href="https://www.healthyfitlifeshop.net/shop/">Kaufen</a></div>
@@ -350,9 +346,9 @@
 
 <section class="grow" aria-labelledby="hfl-h-plan">
   <div class="grow-head"><h2 id="hfl-h-plan" data-reveal>So läuft der Plan</h2><p data-reveal style="--i:1">Vier Wochen, jede mit Wochenplan, Einkaufsliste und einem Vorkoch-Tipp.</p></div>
-  <div class="stage s1" data-reveal><div class="t f-oat"><img src="https://cdn.jsdelivr.net/gh/healthyfitlife/healthyfitlife-assets@f559bac/img/s1-45.jpg" width="800" height="1000" alt="Rohes Gemüse wird aufs Backblech gelegt" loading="lazy" decoding="async"></div><h3>Einmal einkaufen</h3><p>Jede Woche hat ihre Einkaufsliste, sortiert nach Supermarkt-Bereichen.</p></div>
-  <div class="stage s2" data-reveal style="--i:1"><div class="t f-sage"><img src="https://cdn.jsdelivr.net/gh/healthyfitlife/healthyfitlife-assets@f559bac/img/s2-45.jpg" width="800" height="1000" alt="Kürbis und rote Linsen im Topf" loading="lazy" decoding="async"></div><h3>Sonntags vorkochen</h3><p>15 bis 30 Minuten Meal Prep, etwa eine Suppe für mehrere Tage.</p></div>
-  <div class="stage s3" data-reveal style="--i:2"><div class="t f-green"><img src="https://cdn.jsdelivr.net/gh/healthyfitlife/healthyfitlife-assets@f559bac/img/t4-45.jpg" width="800" height="1000" alt="Kichererbsen-Curry mit Reis in einer Schale" loading="lazy" decoding="async"></div><h3>Unter der Woche genießen</h3><p>Abends frisch kochen, mittags gibt es den Rest von gestern.</p></div>
+  <div class="stage s1" data-reveal><div class="t f-oat"><img src="https://www.healthyfitlifeshop.net/wp-content/uploads/go-x/u/e3d60e7d-53fa-4070-bb82-4e45e7734f84/image.jpg" width="800" height="1000" alt="Rohes Gemüse wird aufs Backblech gelegt" loading="lazy" decoding="async"></div><h3>Einmal einkaufen</h3><p>Jede Woche hat ihre Einkaufsliste, sortiert nach Supermarkt-Bereichen.</p></div>
+  <div class="stage s2" data-reveal style="--i:1"><div class="t f-sage"><img src="https://www.healthyfitlifeshop.net/wp-content/uploads/go-x/u/492583f7-e55e-45a6-b891-a2af1d9605f7/image.jpg" width="800" height="1000" alt="Kürbis und rote Linsen im Topf" loading="lazy" decoding="async"></div><h3>Sonntags vorkochen</h3><p>15 bis 30 Minuten Meal Prep, etwa eine Suppe für mehrere Tage.</p></div>
+  <div class="stage s3" data-reveal style="--i:2"><div class="t f-green"><img src="https://www.healthyfitlifeshop.net/wp-content/uploads/go-x/u/327b9f60-3f87-42c3-a030-62a331fbd0a2/image.jpg" width="800" height="1000" alt="Kichererbsen-Curry mit Reis in einer Schale" loading="lazy" decoding="async"></div><h3>Unter der Woche genießen</h3><p>Abends frisch kochen, mittags gibt es den Rest von gestern.</p></div>
 </section>
 
 <section class="plan" id="darm-reset" aria-labelledby="hfl-h-reset">
@@ -362,9 +358,9 @@
     <div class="plan-actions" data-reveal style="--i:2"><a class="button" href="https://www.healthyfitlifeshop.net/shop/">Für 9 € kaufen</a><a class="textlink" href="https://www.healthyfitlifeshop.net/shop/">Alles zum Darm-Reset</a></div>
     <p class="small" data-reveal style="--i:2">PDF mit 40 Seiten zum Sofort-Download. Bezahlen mit PayPal oder Karte.</p>
     <div class="pages" data-reveal style="--i:3">
-      <img src="https://cdn.jsdelivr.net/gh/healthyfitlife/healthyfitlife-assets@f559bac/img/pdf-so-funktioniert.jpg" width="700" height="989" alt="PDF-Seite: So funktioniert dein Plan" loading="lazy" decoding="async">
-      <img src="https://cdn.jsdelivr.net/gh/healthyfitlife/healthyfitlife-assets@f559bac/img/pdf-30-pflanzen.jpg" width="700" height="989" alt="PDF-Seite: Die 30-Pflanzen-Idee" loading="lazy" decoding="async">
-      <img src="https://cdn.jsdelivr.net/gh/healthyfitlife/healthyfitlife-assets@f559bac/img/pdf-wochenplan.jpg" width="700" height="989" alt="PDF-Seite: Dein Wochenplan" loading="lazy" decoding="async">
+      <img src="https://www.healthyfitlifeshop.net/wp-content/uploads/go-x/u/c86c0fde-eb7b-4a5a-b145-517252f45178/image.jpg" width="700" height="989" alt="PDF-Seite: So funktioniert dein Plan" loading="lazy" decoding="async">
+      <img src="https://www.healthyfitlifeshop.net/wp-content/uploads/go-x/u/4c73d0e7-2d8a-4eaf-82fe-3a8736a3798b/image.jpg" width="700" height="989" alt="PDF-Seite: Die 30-Pflanzen-Idee" loading="lazy" decoding="async">
+      <img src="https://www.healthyfitlifeshop.net/wp-content/uploads/go-x/u/1932304d-4fea-4590-a928-5daaadf9673c/image.jpg" width="700" height="989" alt="PDF-Seite: Dein Wochenplan" loading="lazy" decoding="async">
     </div>
   </div>
   <div class="slip-col">
@@ -394,7 +390,7 @@
   <h2 id="hfl-h-about" data-reveal>Ehrlich empfohlen</h2>
   <p class="lead" data-reveal style="--i:1">Ich koche, was in eine normale Woche passt, und zeige es so, wie es ist: kurze Videos, echte Mengen, keine Wundermittel.</p>
   <div class="about-photo" data-reveal style="--i:2">
-    <img src="https://cdn.jsdelivr.net/gh/healthyfitlife/healthyfitlife-assets@f559bac/img/t2-wide.jpg" width="1600" height="1000" alt="Kürbis-Linsen-Suppe im Kupfertopf, mit Kokosmilch und Kresse" loading="lazy" decoding="async">
+    <img src="https://www.healthyfitlifeshop.net/wp-content/uploads/go-x/u/9cd3297a-0891-495b-819d-24c8e3165454/image.jpg" width="1600" height="1000" alt="Kürbis-Linsen-Suppe im Kupfertopf, mit Kokosmilch und Kresse" loading="lazy" decoding="async">
     <p class="note">Werbung und Amazon-Partnerlinks sind auf dieser Seite immer gekennzeichnet. Ich empfehle nur, was in meinen Alltag passt, und sage dazu, warum.</p>
   </div>
   <div class="about-side" data-reveal style="--i:3">
