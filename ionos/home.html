@@ -1,0 +1,537 @@
+<style>#hfl{--bg: #ffffff; --surface: #f2f2f2; --ink: #111111; --muted: #5c5c5c; --accent: #111111; --accent-ink: #ffffff; --font-display: system-ui, sans-serif; --font-text: system-ui, sans-serif; --step-small: clamp(0.8125rem, 0.79rem + 0.1vw, 0.875rem); --step-body: clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem); --step-lead: clamp(1.25rem, 1.1rem + 0.7vw, 1.625rem); --step-head: clamp(2rem, 1.3rem + 3.2vw, 4rem); --step-display: clamp(3rem, 1rem + 9vw, 9rem); --margin: clamp(1rem, 2.2vw, 2rem); --gutter: clamp(1rem, 2vw, 2rem); --section: clamp(5rem, 12vw, 13rem); --radius: 0px; --ease-out: cubic-bezier(0.22, 1, 0.36, 1); --ease-expo: cubic-bezier(0.16, 1, 0.3, 1); --ease-in-out: cubic-bezier(0.76, 0, 0.24, 1); --ease-soft: cubic-bezier(0.33, 1, 0.68, 1); --ease-exit: cubic-bezier(0.55, 0.055, 0.675, 0.19); --t-press: 140ms; --t-hover: 180ms; --t-ui: 240ms; --t-reveal: 800ms; --t-open: 1200ms; --stagger-line: 90ms; --stagger-item: 70ms;}
+#hfl, #hfl *,#hfl *::before,#hfl *::after{box-sizing: border-box;}
+#hfl{-webkit-text-size-adjust: 100%; text-size-adjust: 100%; scroll-behavior: auto;}
+#hfl{margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font-text); font-size: var(--step-body); line-height: 1.5; font-kerning: normal; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;}
+#hfl h1,#hfl h2,#hfl h3,#hfl p,#hfl figure,#hfl dl,#hfl dd{margin: 0;}
+#hfl img,#hfl video{display: block; max-width: 100%;}
+#hfl img,#hfl video{height: auto; background: var(--surface);}
+#hfl button{font: inherit; color: inherit;}
+#hfl button{background: none; border: 0; padding: 0; cursor: pointer;}
+#hfl a{color: inherit;}
+#hfl :target{scroll-margin-top: 6rem;}
+#hfl ::selection{background: var(--accent); color: var(--accent-ink);}
+#hfl :focus-visible{outline: 2px solid var(--accent); outline-offset: 3px;}
+#hfl h1,#hfl h2,#hfl h3{font-family: var(--font-display); font-weight: inherit; text-wrap: balance; hyphens: none;}
+#hfl .lead{font-size: var(--step-lead); line-height: 1.35; max-width: 40ch;}
+#hfl .small{font-size: var(--step-small); line-height: 1.45;}
+#hfl p{max-width: 62ch; text-wrap: pretty;}
+#hfl p + p{margin-top: 0.9em;}
+#hfl .button{display: inline-flex; align-items: center; justify-content: center; min-height: 3rem; padding: 0 1.4rem; background: var(--accent); color: var(--accent-ink); border-radius: var(--radius); text-decoration: none; white-space: nowrap; transition: transform var(--t-press) var(--ease-out), background-color var(--t-hover) ease, color var(--t-hover) ease;}
+#hfl .button:active{transform: scale(0.97);}
+@media (prefers-reduced-motion: no-preference){#hfl.js [data-rise]{opacity: 0; transform: translateY(18px); animation: ad-rise var(--t-reveal) var(--ease-out) forwards; animation-delay: calc(var(--i, 0) * 90ms + 120ms);}
+#hfl.js [data-reveal]{opacity: 0; transform: translateY(24px); transition: opacity 700ms var(--ease-out), transform 900ms var(--ease-out);}
+#hfl.js [data-reveal].is-in{opacity: 1; transform: none;}}
+@keyframes ad-rise{to { opacity: 1; transform: none; }}
+@keyframes ad-line{to { transform: none; }}
+@font-face{font-family: "Lora"; src: url("https://cdn.jsdelivr.net/gh/healthyfitlife/healthyfitlife-assets@f559bac/fonts/Lora-Variable.woff") format("woff"); font-weight: 400 700; font-display: swap;}
+@font-face{font-family: "Poppins"; src: url("https://cdn.jsdelivr.net/gh/healthyfitlife/healthyfitlife-assets@f559bac/fonts/Poppins-Regular.woff") format("woff"); font-weight: 400; font-display: swap;}
+@font-face{font-family: "Poppins"; src: url("https://cdn.jsdelivr.net/gh/healthyfitlife/healthyfitlife-assets@f559bac/fonts/Poppins-Medium.woff") format("woff"); font-weight: 500; font-display: swap;}
+@font-face{font-family: "Poppins"; src: url("https://cdn.jsdelivr.net/gh/healthyfitlife/healthyfitlife-assets@f559bac/fonts/Poppins-Bold.woff") format("woff"); font-weight: 700; font-display: swap;}
+#hfl{--bg: #f1efe9; --surface: #e6e1d6; --ink: #1f3a2d; --muted: #3d5246; --accent: #f2c14e; --accent-ink: #1f3a2d; --paper: #fafaf7; --sage: #a9bb9b; --sage-ink: #1f3a2d; --gold: #f2c14e; --gold-ink: #1f3a2d; --oat: #e3d6bf; --oat-ink: #1f3a2d; --green: #1f3a2d; --green-ink: #f1efe9; --font-display: "Lora", Georgia, serif; --font-text: "Poppins", system-ui, sans-serif; --step-small: 0.875rem; --step-item: clamp(1.125rem, 1rem + 0.35vw, 1.375rem); --step-body: 1.0625rem; --step-lead: var(--step-item); --step-head: clamp(2.125rem, 1.4rem + 2.9vw, 3.75rem); --step-display: clamp(3.25rem, 1.2rem + 6.4vw, 7.25rem); --margin: clamp(1.25rem, 3.4vw, 3.5rem); --gutter: clamp(0.75rem, 1.6vw, 1.5rem); --section: clamp(7.5rem, 14vw, 15rem); --radius: 0px;}
+#hfl{overflow-x: hidden;}
+#hfl .tnum{font-variant-numeric: tabular-nums;}
+#hfl{display: block;}
+#hfl .button{font-weight: 500; gap: 0.5rem;}
+#hfl .button.ink{background: var(--ink); color: var(--bg);}
+#hfl .button.paper{background: var(--paper); color: var(--ink);}
+@media (hover: hover) and (pointer: fine){#hfl .button:hover{background: #e6b23a;}
+#hfl .button.ink:hover{background: #2c4d3d;}
+#hfl .button.paper:hover{background: #fff;}
+#hfl .textlink:hover{text-decoration-color: currentColor;}}
+#hfl .textlink{text-decoration: underline; text-decoration-color: color-mix(in srgb, currentColor 35%, transparent); text-underline-offset: 0.22em; text-decoration-thickness: 0.08em; transition: text-decoration-color var(--t-hover) ease; font-weight: 500;}
+#hfl .hero{display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gutter); align-items: center; padding: clamp(2rem, 5vw, 4rem) var(--margin) clamp(3rem, 6vw, 5rem); min-height: calc(100svh - 4.5rem);}
+#hfl .hero-text{grid-column: 1 / span 7;}
+#hfl .hero h1{font-size: min(var(--step-display), 6.6vw); line-height: 0.95; letter-spacing: -0.035em; font-weight: 600;}
+#hfl .hero .lead{margin-top: 2.25rem; max-width: 36ch;}
+#hfl .hero-actions{margin-top: 2.5rem; display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.75rem;}
+#hfl .plinth-wrap{grid-column: 8 / span 5; display: flex; flex-direction: column; align-items: center;}
+#hfl .plinth{position: relative; width: min(100%, 72svh, 640px); aspect-ratio: 1; background: var(--surface); display: grid; place-items: center;}
+#hfl .plinth figure{position: absolute; inset: 11%; margin: 0;}
+#hfl .plinth img{width: 100%; height: 100%; object-fit: cover;}
+#hfl .plinth figure{opacity: 0; transition: opacity 1600ms var(--ease-soft);}
+#hfl .plinth figure.on{opacity: 1;}
+#hfl .plinth-cap{margin-top: 1.25rem; width: min(100%, 72svh, 640px); display: flex; justify-content: space-between; gap: 1rem;}
+#hfl .plinth-cap span:first-child{font-weight: 500;}
+#hfl .plinth-cap span:last-child{color: var(--muted);}
+@media (max-width: 52em){#hfl .hero{min-height: 0; row-gap: 2.5rem;}
+#hfl .hero h1{font-size: 12.2vw;}
+#hfl .hero-text,#hfl .plinth-wrap{grid-column: 1 / -1;}
+#hfl .plinth{width: 100%;}
+#hfl .plinth-cap{width: 100%;}}
+#hfl .catalogue{padding: var(--section) var(--margin) 0; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gutter);}
+#hfl .cat-side{grid-column: 1 / span 4;}
+#hfl .cat-side-inner{position: sticky; top: 6.5rem;}
+#hfl .cat-side h2{font-size: var(--step-head); line-height: 1.02; letter-spacing: -0.025em; font-weight: 600;}
+#hfl .cat-side > .cat-side-inner > p{margin-top: 1.5rem;}
+#hfl .counter{margin-top: 2.5rem; background: var(--surface); padding: 1.75rem;}
+#hfl .count-line{display: flex; align-items: baseline; gap: 0.6rem;}
+#hfl .count-num{font-family: var(--font-display); font-weight: 600; font-size: var(--step-head); line-height: 0.9; letter-spacing: -0.04em;}
+#hfl .count-of{font-size: var(--step-item); font-weight: 500;}
+#hfl .meter{margin-top: 1.25rem; height: 0.75rem; background: var(--bg); position: relative; overflow: hidden;}
+#hfl .meter i{position: absolute; inset: 0; background: var(--ink); transform-origin: left; transform: scaleX(var(--p, 0)); transition: transform 600ms var(--ease-out);}
+#hfl .counter.full .meter i{background: var(--accent);}
+#hfl .count-note{margin-top: 1.25rem;}
+#hfl .count-list{margin-top: 0.5rem; color: var(--muted); min-height: 3em;}
+#hfl .counter-actions{margin-top: 1.25rem; display: flex; gap: 1.25rem; flex-wrap: wrap;}
+#hfl .counter-actions button{font-weight: 500; text-decoration: underline; text-underline-offset: 0.22em; text-decoration-thickness: 0.08em;}
+#hfl .tiles{grid-column: 6 / -1; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 3rem 0.75rem; align-content: start;}
+#hfl .spec{display: flex; flex-direction: column;}
+#hfl .spec.big{grid-column: span 2; grid-row: span 2;}
+#hfl .tile{position: relative; display: grid; place-items: center; aspect-ratio: 4 / 5; width: 100%; padding: 12%; transition: background-color 300ms ease;}
+#hfl .tile img{width: 100%; height: 100%; object-fit: cover; transition: transform 400ms var(--ease-out);}
+#hfl .tile:active img{transform: scale(0.97);}
+#hfl .tile[aria-pressed="true"]{background: var(--ink) !important;}
+#hfl .tile[aria-pressed="true"] img{transform: scale(0.94);}
+#hfl .tile .tick{position: absolute; right: 0.75rem; bottom: 0.75rem; width: 2.75rem; height: 2.75rem; display: grid; place-items: center; background: var(--paper); color: var(--ink); font-weight: 700; font-size: 1.375rem; line-height: 1; transition: transform var(--t-ui) var(--ease-out), background-color var(--t-ui) ease;}
+#hfl .tile[aria-pressed="true"] .tick{background: var(--accent); color: var(--accent-ink);}
+@media (hover: hover) and (pointer: fine){#hfl .tile:hover img{transform: scale(1.03);}
+#hfl .tile[aria-pressed="true"]:hover img{transform: scale(0.96);}}
+#hfl .f-sage{background: var(--sage);}
+#hfl .f-gold{background: var(--gold);}
+#hfl .f-oat{background: var(--oat);}
+#hfl .f-green{background: var(--green);}
+#hfl .spec h3{margin-top: 1rem; font-family: var(--font-text); font-size: var(--step-item); font-weight: 500; line-height: 1.3; letter-spacing: 0;}
+#hfl .spec h3 a{text-decoration: none;}
+#hfl .spec p{margin-top: 0.25rem; color: var(--muted);}
+#hfl .spec .state{color: var(--ink); font-weight: 700;}
+@media (max-width: 64em){#hfl .cat-side{grid-column: 1 / -1;}
+#hfl .cat-side-inner{position: static;}
+#hfl .tiles{grid-column: 1 / -1; margin-top: 3.5rem;}}
+@media (max-width: 40em){#hfl .tiles{grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem 0.5rem;}
+#hfl .spec h3{font-size: 1.0625rem;}}
+#hfl .two{margin-top: var(--section); display: grid; grid-template-columns: 1fr 1fr;}
+#hfl .panel{position: relative; height: 92svh; min-height: 40rem; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-end;}
+#hfl .panel.green{background: var(--green); color: var(--green-ink);}
+#hfl .panel.gold{background: var(--gold); color: var(--gold-ink);}
+#hfl .panel .obj{position: absolute; left: 50%; top: 0; width: 82%; transform: translateX(-50%);}
+#hfl .panel.green .obj{aspect-ratio: 4 / 5; top: -10%; width: 58%; left: auto; right: 8%; transform: none;}
+#hfl .panel.green video,#hfl .panel.green .obj img{width: 100%; height: 100%; object-fit: cover;}
+#hfl .panel.gold .obj{width: 112%; top: -14%; mix-blend-mode: multiply;}
+#hfl .panel h2{position: absolute; top: 1.75rem; left: 1.75rem; font-size: var(--step-head); line-height: 1.05; letter-spacing: -0.02em; font-weight: 600; z-index: 2;}
+#hfl .panel-row{position: relative; z-index: 2; display: flex; justify-content: space-between; align-items: flex-end; gap: 1.25rem; padding: 1.75rem;}
+#hfl .panel-row .name{font-size: var(--step-item); font-weight: 500;}
+#hfl .panel-row .fact{font-size: var(--step-body);}
+#hfl .panel-row .acts{display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: flex-end;}
+#hfl .panel.green .panel-row{background: var(--green);}
+@media (max-width: 52em){#hfl .two{grid-template-columns: 1fr;}
+#hfl .panel{height: 78svh; min-height: 34rem;}
+#hfl .panel-row{flex-direction: column; align-items: stretch;}
+#hfl .panel-row .acts{justify-content: stretch;}
+#hfl .panel-row .acts .button{flex: 1;}
+#hfl .panel h2{top: 1.25rem; left: 1.25rem;}
+#hfl .panel.green .obj{width: 88%; right: 0; top: -12%;}}
+#hfl .grow{padding: var(--section) var(--margin) 0; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 0.625rem; align-items: end;}
+#hfl .grow-head{grid-column: 1 / span 7; grid-row: 1; align-self: start;}
+#hfl .grow-head h2{font-size: var(--step-head); line-height: 1.02; letter-spacing: -0.025em; font-weight: 600;}
+#hfl .grow-head p{margin-top: 1.25rem; max-width: 30ch;}
+#hfl .stage{grid-row: 1; display: flex; flex-direction: column;}
+#hfl .stage .t{display: grid; place-items: center; overflow: hidden;}
+#hfl .stage img{height: 84%; width: auto; aspect-ratio: 4 / 5; object-fit: cover;}
+#hfl .stage.s1{grid-column: 1 / span 3;}
+#hfl .stage.s1 .t{height: 30vh;}
+#hfl .stage.s2{grid-column: 4 / span 4;}
+#hfl .stage.s2 .t{height: 44vh;}
+#hfl .stage.s3{grid-column: 8 / span 5;}
+#hfl .stage.s3 .t{height: 64vh;}
+#hfl .stage h3{margin-top: 1rem; font-family: var(--font-text); font-size: var(--step-item); font-weight: 500; letter-spacing: 0;}
+#hfl .stage p{margin-top: 0.35rem; max-width: 34ch; min-height: 3.2em;}
+@media (max-width: 40em){#hfl .grow{display: block;}
+#hfl .stage{margin-top: 2.5rem;}
+#hfl .stage.s1 .t{height: 34vw;}
+#hfl .stage.s2 .t{height: 46vw;}
+#hfl .stage.s3 .t{height: 62vw;}
+#hfl .stage img{height: 88%;}
+#hfl .stage p{min-height: 0;}}
+#hfl .plan{margin-top: var(--section); background: var(--green); color: var(--green-ink); padding: 0 var(--margin) clamp(5rem, 9vw, 8rem); display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gutter); overflow: hidden;}
+#hfl .plan-text{grid-column: 1 / span 6; padding-top: 6rem;}
+#hfl .plan-text h2{font-size: var(--step-head); line-height: 1.02; letter-spacing: -0.025em; font-weight: 600;}
+#hfl .plan-text p{margin-top: 1.5rem; max-width: 46ch;}
+#hfl .plan-text .button{margin-top: 2.25rem; min-height: 3.5rem; padding: 0 2rem;}
+#hfl .plan-text .small{margin-top: 1rem;}
+#hfl .pages{margin-top: 3.5rem; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.75rem; max-width: 36rem;}
+#hfl .pages img{width: 100%; aspect-ratio: 414 / 585; object-fit: cover; background: var(--paper);}
+#hfl .slip-col{grid-column: 8 / span 4;}
+#hfl .slip{background: var(--paper); color: var(--ink); padding: 6.5rem 1.75rem 3.5rem; clip-path: polygon(0 0, 100% 0, 100% calc(100% - 14px), 95% 100%, 90% calc(100% - 14px), 85% 100%, 80% calc(100% - 14px), 75% 100%, 70% calc(100% - 14px), 65% 100%, 60% calc(100% - 14px), 55% 100%, 50% calc(100% - 14px), 45% 100%, 40% calc(100% - 14px), 35% 100%, 30% calc(100% - 14px), 25% 100%, 20% calc(100% - 14px), 15% 100%, 10% calc(100% - 14px), 5% 100%, 0 calc(100% - 14px));}
+#hfl .slip .sname{text-align: center; font-weight: 700; font-size: var(--step-item);}
+#hfl .slip .ssub{text-align: center; color: var(--muted); margin: 0.25rem auto 1.75rem;}
+#hfl .slip dl{display: grid; grid-template-columns: 1fr auto; gap: 0.875rem 1rem;}
+#hfl .slip dt{margin: 0;}
+#hfl .slip dd{margin: 0; text-align: right; font-variant-numeric: tabular-nums;}
+#hfl .slip .bar4{height: 4px; background: var(--ink); margin: 3rem 0 2rem;}
+#hfl .slip .total{max-width: none; display: flex; justify-content: space-between; align-items: baseline;}
+#hfl .slip .total .sum{font-family: var(--font-display); font-size: var(--step-head); letter-spacing: -0.03em; font-weight: 600; font-variant-numeric: tabular-nums;}
+@media (max-width: 52em){#hfl .plan-text,#hfl .slip-col{grid-column: 1 / -1;}
+#hfl .slip-col{margin-top: 3rem;}
+#hfl .slip{width: 92%; margin: 0 auto; padding-top: 2.5rem;}
+#hfl .plan-text .button{width: 100%;}}
+#hfl .faq{padding: var(--section) var(--margin) 0; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gutter);}
+#hfl .faq h2{grid-column: 1 / span 4; align-self: start; position: sticky; top: 6.5rem; font-size: var(--step-head); line-height: 1.02; letter-spacing: -0.025em; font-weight: 600;}
+#hfl .faq-list{grid-column: 5 / -1; display: grid; gap: 0.5rem;}
+#hfl .faq details{background: var(--surface); transition: background-color var(--t-ui) ease;}
+#hfl .faq summary{list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1.5rem; min-height: 4.5rem; padding: 1rem 1.5rem; font-size: var(--step-item); font-weight: 500;}
+#hfl .faq summary::-webkit-details-marker{display: none;}
+#hfl .plus{position: relative; flex: none; width: 1rem; height: 1rem;}
+#hfl .plus::before,#hfl .plus::after{content: ""; position: absolute; left: 0; top: calc(50% - 1.5px); width: 1rem; height: 3px; background: currentColor; transition: transform var(--t-ui) var(--ease-out);}
+#hfl .plus::after{transform: rotate(90deg);}
+#hfl .faq details[open]{background: var(--accent); color: var(--accent-ink);}
+#hfl .faq details[open] .plus::after{transform: rotate(0deg);}
+#hfl .faq .ans{padding: 0 1.5rem 1.5rem; max-width: 56ch;}
+#hfl .faq .ans a{color: inherit;}
+@media (hover: hover) and (pointer: fine){#hfl .faq details:not([open]) summary:hover{background: #e3d9c6;}}
+@media (max-width: 52em){#hfl .faq h2{grid-column: 1 / -1; position: static; margin-bottom: 2rem;}
+#hfl .faq-list{grid-column: 1 / -1;}
+#hfl .faq summary{min-height: 4rem;}}
+#hfl .about{padding: var(--section) var(--margin) 0; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gutter);}
+#hfl .about h2{grid-column: 1 / span 8; font-size: var(--step-head); line-height: 1.02; letter-spacing: -0.025em; font-weight: 600;}
+#hfl .about .lead{grid-column: 1 / span 6; margin-top: 1.5rem; max-width: 44ch;}
+#hfl .about-photo{grid-column: 1 / span 8; margin-top: 4.5rem; position: relative;}
+#hfl .about-photo img{width: 100%; aspect-ratio: 16 / 10; object-fit: cover;}
+#hfl .about-photo .note{position: absolute; top: 0; right: 0; width: 22rem; background: var(--paper); padding: 1.5rem;}
+#hfl .about-side{grid-column: 9 / -1; margin-top: 4.5rem;}
+#hfl .about-tile{background: var(--sage); color: var(--sage-ink); aspect-ratio: 16 / 16; display: flex; flex-direction: column; justify-content: flex-end; padding: 1.75rem;}
+#hfl .about-tile b{font-family: var(--font-display); font-size: var(--step-display); line-height: 0.85; letter-spacing: -0.05em; font-weight: 600;}
+#hfl .about-tile span{margin-top: 0.75rem; font-weight: 500; font-size: var(--step-item); max-width: 18ch;}
+#hfl .facts{margin-top: 1.75rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem 1rem;}
+#hfl .facts dt{color: var(--muted); font-size: var(--step-small);}
+#hfl .facts dd{margin: 0.15rem 0 0; font-weight: 500;}
+@media (max-width: 52em){#hfl .about h2,#hfl .about .lead,#hfl .about-photo,#hfl .about-side{grid-column: 1 / -1;}
+#hfl .about-photo img{aspect-ratio: 4 / 3;}
+#hfl .about-photo .note{position: static; width: auto; padding: 1.25rem 0 0; background: none;}
+#hfl .about-side{margin-top: 2.5rem;}
+#hfl .about-tile{aspect-ratio: 3 / 2;}}
+#hfl .journal{padding: var(--section) var(--margin) 0; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gutter);}
+#hfl .journal-head{grid-column: 1 / span 5;}
+#hfl .journal-head h2{font-size: var(--step-head); line-height: 1.02; letter-spacing: -0.025em; font-weight: 600;}
+#hfl .journal-head p{margin-top: 1.5rem; max-width: 36ch;}
+#hfl .journal-head .textlink{display: inline-block; margin-top: 1.5rem;}
+#hfl .rows{grid-column: 7 / -1;}
+#hfl .group + .group{margin-top: 2.5rem;}
+#hfl .group h3{font-family: var(--font-text); font-size: var(--step-body); font-weight: 400; color: var(--muted); letter-spacing: 0; margin-bottom: 0.5rem;}
+#hfl .row{display: flex; justify-content: space-between; align-items: baseline; gap: 1.25rem; padding: 0.55rem 0; text-decoration: none;}
+#hfl .row .l{display: flex; align-items: baseline; gap: 0.6rem;}
+#hfl .row .dot{flex: none; width: 1rem; height: 1rem; border-radius: 50%; transform: translateY(0.15em);}
+#hfl .row .v{flex: none; font-size: var(--step-small); color: var(--muted); font-variant-numeric: tabular-nums;}
+#hfl .row .n{transition: color var(--t-hover) ease;}
+@media (hover: hover) and (pointer: fine){#hfl .row:hover .n{text-decoration: underline; text-underline-offset: 0.2em; text-decoration-thickness: 0.07em;}}
+@media (max-width: 52em){#hfl .journal-head,#hfl .rows{grid-column: 1 / -1;}
+#hfl .rows{margin-top: 2.5rem;}
+#hfl .row{min-height: 2.75rem; flex-direction: column; gap: 0.15rem;}
+#hfl .row .v{padding-left: 1.6rem;}}
+#hfl .plan-actions{margin-top: 2.25rem; display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.75rem;}
+#hfl .plan-actions .button{min-height: 3.5rem; padding: 0 2rem;}
+#hfl .plan-text .plan-actions .button{margin-top: 0;}
+#hfl .plan .textlink{color: var(--green-ink);}
+@media (hover: hover) and (pointer: fine){#hfl a.tile img{transition: transform 500ms var(--ease-out);}
+#hfl a.tile:hover img{transform: scale(1.03);}}
+#hfl .journal .row{max-width: none;}
+@media (prefers-reduced-motion: reduce){#hfl .plinth figure{transition: none;}
+#hfl .meter i,#hfl .tile,#hfl .tile img{transition: none;}}
+@media (prefers-reduced-motion: no-preference){#hfl.js [data-reveal]{transition-delay: calc(var(--i, 0) * 80ms);}
+#hfl.js .plinth-wrap[data-rise]{animation-duration: 1100ms;}}
+#hfl :focus-visible{outline-color: var(--ink);}
+#hfl .plan :focus-visible,#hfl .panel.green :focus-visible{outline-color: var(--gold);}
+@media (max-width: 52em){#hfl .journal-head p{max-width: none;}}
+#hfl{position:relative;width:100vw;max-width:100vw;margin-left:calc(50% - 50vw);text-align:left;overflow-x:clip}#hfl h1,#hfl h2,#hfl h3,#hfl p,#hfl a,#hfl dt,#hfl dd,#hfl summary,#hfl button,#hfl span{letter-spacing:normal;text-transform:none}#hfl h1,#hfl h2,#hfl h3{color:inherit}#hfl img,#hfl video{border:0;border-radius:0;box-shadow:none}</style>
+<div id="hfl" class="hfl">
+
+<section class="hero" aria-labelledby="hfl-h1">
+  <div class="hero-text">
+    <h1 id="hfl-h1" data-rise style="--i:0">Darmfreundlich &amp; einfach</h1>
+    <p class="lead" data-rise style="--i:1">Neun schnelle Rezepte aus meiner Videoserie und der Darm-Reset, mein 4-Wochen-Plan für mehr Ballaststoffe, ganz ohne Kalorienzählen.</p>
+    <div class="hero-actions" data-rise style="--i:2">
+      <a class="button" href="#rezepte">Rezepte ansehen</a>
+      <a class="textlink" href="#darm-reset">Darm-Reset für 9 €</a>
+    </div>
+  </div>
+  <div class="plinth-wrap" data-rise style="--i:2">
+    <div class="plinth" data-plinth><figure class="on" data-name="Apfel-Zimt Overnight Oats" data-part="Teil 1 · 5 Min + über Nacht"><img src="https://cdn.jsdelivr.net/gh/healthyfitlife/healthyfitlife-assets@f559bac/img/t1-sq.jpg" width="900" height="900" alt="Apfel-Zimt Overnight Oats" decoding="async"></figure><figure class="" data-name="Kürbis-Linsen-Suppe" data-part="Teil 2 · 30 Min"><img src="https://cdn.jsdelivr.net/gh/healthyfitlife/healthyfitlife-assets@f559bac/img/t2-sq.jpg" width="900" height="900" alt="Kürbis-Linsen-Suppe" loading="lazy" decoding="async"></figure><figure class="" data-name="Kiwi-Chia-Pudding" data-part="Teil 3 · 5 Min + 2 Std"><img src="https://cdn.jsdelivr.net/gh/healthyfitlife/healthyfitlife-assets@f559bac/img/t3-sq.jpg" width="900" height="900" alt="Kiwi-Chia-Pudding" loading="lazy" decoding="async"></figure><figure class="" data-name="Kichererbsen-Kürbis-Curry" data-part="Teil 4 · 35 Min"><img src="https://cdn.jsdelivr.net/gh/healthyfitlife/healthyfitlife-assets@f559bac/img/t4-sq.jpg" width="900" height="900" alt="Kichererbsen-Kürbis-Curry" loading="lazy" decoding="async"></figure><figure class="" data-name="Quinoa-Bowl mit Röstkichererbsen" data-part="Teil 5 · 30 Min"><img src="https://cdn.jsdelivr.net/gh/healthyfitlife/healthyfitlife-assets@f559bac/img/t5-sq.jpg" width="900" height="900" alt="Quinoa-Bowl mit Röstkichererbsen" loading="lazy" decoding="async"></figure><figure class="" data-name="Grüner Kefir-Smoothie" data-part="Teil 6 · 5 Min"><img src="https://cdn.jsdelivr.net/gh/healthyfitlife/healthyfitlife-assets@f559bac/img/t6-sq.jpg" width="900" height="900" alt="Grüner Kefir-Smoothie" loading="lazy" decoding="async"></figure><figure class="" data-name="Shakshuka mit Feta" data-part="Teil 7 · 25 Min"><img src="https://cdn.jsdelivr.net/gh/healthyfitlife/healthyfitlife-assets@f559bac/img/t7-sq.jpg" width="900" height="900" alt="Shakshuka mit Feta" loading="lazy" decoding="async"></figure><figure class="" data-name="Lachs mit Ofengemüse" data-part="Teil 8 · 35 Min"><img src="https://cdn.jsdelivr.net/gh/healthyfitlife/healthyfitlife-assets@f559bac/img/t8-sq.jpg" width="900" height="900" alt="Lachs mit Ofengemüse" loading="lazy" decoding="async"></figure><figure class="" data-name="Beeren-Hafer-Crumble" data-part="Teil 9 · 10 Min + 25 Min backen"><img src="https://cdn.jsdelivr.net/gh/healthyfitlife/healthyfitlife-assets@f559bac/img/t9-sq.jpg" width="900" height="900" alt="Beeren-Hafer-Crumble" loading="lazy" decoding="async"></figure></div>
+    <p class="plinth-cap small"><span data-cap-name>Apfel-Zimt Overnight Oats</span><span data-cap-part>Teil 1 · 5 Min + über Nacht</span></p>
+  </div>
+</section>
+
+<section class="catalogue" id="rezepte" aria-labelledby="hfl-h-rezepte">
+  <div class="cat-side"><div class="cat-side-inner">
+    <h2 id="hfl-h-rezepte" data-reveal>Neun Teile, neun Teller</h2>
+    <p data-reveal style="--i:1">Jedes Gericht aus der Serie, mit echten Mengen. Wähle, was du diese Woche kochst, und sieh, wie viele verschiedene Pflanzen zusammenkommen.</p>
+    <div class="counter" data-counter hidden aria-live="polite">
+      <div class="count-line"><span class="count-num tnum" data-num>0</span><span class="count-of">von 30 Pflanzen</span></div>
+      <div class="meter" aria-hidden="true"><i></i></div>
+      <p class="count-note" data-note></p>
+      <p class="count-list small" data-list></p>
+      <div class="counter-actions"><button type="button" data-all>Alle neun wählen</button><button type="button" data-clear>Auswahl leeren</button></div>
+    </div>
+    <noscript><p class="counter">Mit allen neun Rezepten kommst du auf 32 verschiedene Pflanzen in einer Woche.</p></noscript>
+  </div></div>
+  <div class="tiles">
+    <article class="spec" data-reveal style="--i:0">
+      <button class="tile f-sage" type="button" aria-pressed="false" data-slug="apfel-zimt-overnight-oats" data-plants="Hafer|Leinsamen|Chiasamen|Apfel|Walnuss" aria-label="Apfel-Zimt Overnight Oats: zur Woche hinzufügen">
+        <img src="https://cdn.jsdelivr.net/gh/healthyfitlife/healthyfitlife-assets@f559bac/img/t1-45.jpg" width="800" height="1000" alt="Apfel-Zimt Overnight Oats" loading="lazy" decoding="async">
+        <span class="tick" aria-hidden="true">+</span>
+      </button>
+      <h3><a href="https://www.healthyfitlifeshop.net/gesunde-rezepte/">Apfel-Zimt Overnight Oats</a></h3>
+      <p>Teil 1 · 5 Min + über Nacht · 5 Pflanzen <span class="state" data-state="apfel-zimt-overnight-oats"></span></p>
+    </article><article class="spec" data-reveal style="--i:1">
+      <button class="tile f-gold" type="button" aria-pressed="false" data-slug="kuerbis-linsen-suppe" data-plants="Hokkaido-Kürbis|Rote Linsen|Zwiebel|Knoblauch|Ingwer|Kürbiskerne" aria-label="Kürbis-Linsen-Suppe: zur Woche hinzufügen">
+        <img src="https://cdn.jsdelivr.net/gh/healthyfitlife/healthyfitlife-assets@f559bac/img/t2-45.jpg" width="800" height="1000" alt="Kürbis-Linsen-Suppe" loading="lazy" decoding="async">
+        <span class="tick" aria-hidden="true">+</span>
+      </button>
+      <h3><a href="https://www.healthyfitlifeshop.net/gesunde-rezepte/">Kürbis-Linsen-Suppe</a></h3>
+      <p>Teil 2 · 30 Min · 6 Pflanzen <span class="state" data-state="kuerbis-linsen-suppe"></span></p>
+    </article><article class="spec" data-reveal style="--i:2">
+      <button class="tile f-oat" type="button" aria-pressed="false" data-slug="kiwi-chia-pudding" data-plants="Chiasamen|Kiwi|Kürbiskerne" aria-label="Kiwi-Chia-Pudding: zur Woche hinzufügen">
+        <img src="https://cdn.jsdelivr.net/gh/healthyfitlife/healthyfitlife-assets@f559bac/img/t3-45.jpg" width="800" height="1000" alt="Kiwi-Chia-Pudding" loading="lazy" decoding="async">
+        <span class="tick" aria-hidden="true">+</span>
+      </button>
+      <h3><a href="https://www.healthyfitlifeshop.net/gesunde-rezepte/">Kiwi-Chia-Pudding</a></h3>
+      <p>Teil 3 · 5 Min + 2 Std · 3 Pflanzen <span class="state" data-state="kiwi-chia-pudding"></span></p>
+    </article><article class="spec big" data-reveal style="--i:0">
+      <button class="tile f-green" type="button" aria-pressed="false" data-slug="kichererbsen-kuerbis-curry" data-plants="Kichererbsen|Hokkaido-Kürbis|Spinat|Zwiebel|Knoblauch|Ingwer|Naturreis|Limette|Schnittlauch" aria-label="Kichererbsen-Kürbis-Curry: zur Woche hinzufügen">
+        <img src="https://cdn.jsdelivr.net/gh/healthyfitlife/healthyfitlife-assets@f559bac/img/t4-45.jpg" width="800" height="1000" alt="Kichererbsen-Kürbis-Curry" loading="lazy" decoding="async">
+        <span class="tick" aria-hidden="true">+</span>
+      </button>
+      <h3><a href="https://www.healthyfitlifeshop.net/gesunde-rezepte/">Kichererbsen-Kürbis-Curry</a></h3>
+      <p>Teil 4 · 35 Min · 9 Pflanzen <span class="state" data-state="kichererbsen-kuerbis-curry"></span></p>
+    </article><article class="spec" data-reveal style="--i:1">
+      <button class="tile f-sage" type="button" aria-pressed="false" data-slug="quinoa-bowl" data-plants="Quinoa|Kichererbsen|Grünkohl|Zuckerschoten|Avocado|Rote Zwiebel|Pistazien|Zitrone" aria-label="Quinoa-Bowl mit Röstkichererbsen: zur Woche hinzufügen">
+        <img src="https://cdn.jsdelivr.net/gh/healthyfitlife/healthyfitlife-assets@f559bac/img/t5-45.jpg" width="800" height="1000" alt="Quinoa-Bowl mit Röstkichererbsen" loading="lazy" decoding="async">
+        <span class="tick" aria-hidden="true">+</span>
+      </button>
+      <h3><a href="https://www.healthyfitlifeshop.net/gesunde-rezepte/">Quinoa-Bowl mit Röstkichererbsen</a></h3>
+      <p>Teil 5 · 30 Min · 8 Pflanzen <span class="state" data-state="quinoa-bowl"></span></p>
+    </article><article class="spec" data-reveal style="--i:2">
+      <button class="tile f-gold" type="button" aria-pressed="false" data-slug="gruener-kefir-smoothie" data-plants="Spinat|Banane|Ingwer|Leinsamen" aria-label="Grüner Kefir-Smoothie: zur Woche hinzufügen">
+        <img src="https://cdn.jsdelivr.net/gh/healthyfitlife/healthyfitlife-assets@f559bac/img/t6-45.jpg" width="800" height="1000" alt="Grüner Kefir-Smoothie" loading="lazy" decoding="async">
+        <span class="tick" aria-hidden="true">+</span>
+      </button>
+      <h3><a href="https://www.healthyfitlifeshop.net/gesunde-rezepte/">Grüner Kefir-Smoothie</a></h3>
+      <p>Teil 6 · 5 Min · 4 Pflanzen <span class="state" data-state="gruener-kefir-smoothie"></span></p>
+    </article><article class="spec" data-reveal style="--i:0">
+      <button class="tile f-oat" type="button" aria-pressed="false" data-slug="shakshuka" data-plants="Zwiebel|Paprika|Knoblauch|Tomate|Petersilie" aria-label="Shakshuka mit Feta: zur Woche hinzufügen">
+        <img src="https://cdn.jsdelivr.net/gh/healthyfitlife/healthyfitlife-assets@f559bac/img/t7-45.jpg" width="800" height="1000" alt="Shakshuka mit Feta" loading="lazy" decoding="async">
+        <span class="tick" aria-hidden="true">+</span>
+      </button>
+      <h3><a href="https://www.healthyfitlifeshop.net/gesunde-rezepte/">Shakshuka mit Feta</a></h3>
+      <p>Teil 7 · 25 Min · 5 Pflanzen <span class="state" data-state="shakshuka"></span></p>
+    </article><article class="spec" data-reveal style="--i:1">
+      <button class="tile f-green" type="button" aria-pressed="false" data-slug="lachs-ofengemuese" data-plants="Brokkoli|Rote Zwiebel|Süßkartoffel|Zitrone" aria-label="Lachs mit Ofengemüse: zur Woche hinzufügen">
+        <img src="https://cdn.jsdelivr.net/gh/healthyfitlife/healthyfitlife-assets@f559bac/img/t8-45.jpg" width="800" height="1000" alt="Lachs mit Ofengemüse" loading="lazy" decoding="async">
+        <span class="tick" aria-hidden="true">+</span>
+      </button>
+      <h3><a href="https://www.healthyfitlifeshop.net/gesunde-rezepte/">Lachs mit Ofengemüse</a></h3>
+      <p>Teil 8 · 35 Min · 4 Pflanzen <span class="state" data-state="lachs-ofengemuese"></span></p>
+    </article><article class="spec" data-reveal style="--i:2">
+      <button class="tile f-sage" type="button" aria-pressed="false" data-slug="beeren-hafer-crumble" data-plants="Heidelbeere|Himbeere|Hafer|Walnuss" aria-label="Beeren-Hafer-Crumble: zur Woche hinzufügen">
+        <img src="https://cdn.jsdelivr.net/gh/healthyfitlife/healthyfitlife-assets@f559bac/img/t9-45.jpg" width="800" height="1000" alt="Beeren-Hafer-Crumble" loading="lazy" decoding="async">
+        <span class="tick" aria-hidden="true">+</span>
+      </button>
+      <h3><a href="https://www.healthyfitlifeshop.net/gesunde-rezepte/">Beeren-Hafer-Crumble</a></h3>
+      <p>Teil 9 · 10 Min + 25 Min backen · 4 Pflanzen <span class="state" data-state="beeren-hafer-crumble"></span></p>
+    </article>
+  </div>
+</section>
+
+<section class="two" aria-labelledby="hfl-h-wege">
+  <div class="panel green">
+    <h2 id="hfl-h-wege">Zwei Wege</h2>
+    <div class="obj"><video data-loop muted loop playsinline autoplay preload="metadata" poster="https://cdn.jsdelivr.net/gh/healthyfitlife/healthyfitlife-assets@f559bac/video/serie-curry-poster.jpg" width="720" height="900" aria-label="Kichererbsen-Kürbis-Curry wird gekocht, aus Teil 4 der Serie"><source src="https://cdn.jsdelivr.net/gh/healthyfitlife/healthyfitlife-assets@f559bac/video/serie-curry.mp4" type="video/mp4"></video></div>
+    <div class="panel-row">
+      <div><p class="name">Die Videoserie</p><p class="fact">9 Rezepte, je etwa 20 Sekunden</p></div>
+      <div class="acts"><a class="button paper" href="https://www.healthyfitlifeshop.net/gesunde-rezepte/">Rezepte lesen</a></div>
+    </div>
+  </div>
+  <div class="panel gold">
+    <div class="obj"><img src="https://cdn.jsdelivr.net/gh/healthyfitlife/healthyfitlife-assets@f559bac/img/darm-reset-mockup.jpg" width="1100" height="1100" alt="Darm-Reset: das PDF auf Tablet und als Ausdruck" loading="lazy" decoding="async"></div>
+    <div class="panel-row">
+      <div><p class="name">Darm-Reset</p><p class="fact">4-Wochen-Plan als PDF · 9 €</p></div>
+      <div class="acts"><a class="button paper" href="https://www.healthyfitlifeshop.net/shop/">Was drin ist</a><a class="button ink" href="https://www.healthyfitlifeshop.net/shop/">Kaufen</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="grow" aria-labelledby="hfl-h-plan">
+  <div class="grow-head"><h2 id="hfl-h-plan" data-reveal>So läuft der Plan</h2><p data-reveal style="--i:1">Vier Wochen, jede mit Wochenplan, Einkaufsliste und einem Vorkoch-Tipp.</p></div>
+  <div class="stage s1" data-reveal><div class="t f-oat"><img src="https://cdn.jsdelivr.net/gh/healthyfitlife/healthyfitlife-assets@f559bac/img/s1-45.jpg" width="800" height="1000" alt="Rohes Gemüse wird aufs Backblech gelegt" loading="lazy" decoding="async"></div><h3>Einmal einkaufen</h3><p>Jede Woche hat ihre Einkaufsliste, sortiert nach Supermarkt-Bereichen.</p></div>
+  <div class="stage s2" data-reveal style="--i:1"><div class="t f-sage"><img src="https://cdn.jsdelivr.net/gh/healthyfitlife/healthyfitlife-assets@f559bac/img/s2-45.jpg" width="800" height="1000" alt="Kürbis und rote Linsen im Topf" loading="lazy" decoding="async"></div><h3>Sonntags vorkochen</h3><p>15 bis 30 Minuten Meal Prep, etwa eine Suppe für mehrere Tage.</p></div>
+  <div class="stage s3" data-reveal style="--i:2"><div class="t f-green"><img src="https://cdn.jsdelivr.net/gh/healthyfitlife/healthyfitlife-assets@f559bac/img/t4-45.jpg" width="800" height="1000" alt="Kichererbsen-Curry mit Reis in einer Schale" loading="lazy" decoding="async"></div><h3>Unter der Woche genießen</h3><p>Abends frisch kochen, mittags gibt es den Rest von gestern.</p></div>
+</section>
+
+<section class="plan" id="darm-reset" aria-labelledby="hfl-h-reset">
+  <div class="plan-text">
+    <h2 id="hfl-h-reset" data-reveal>Der Darm-Reset</h2>
+    <p data-reveal style="--i:1">Vier Wochen darmfreundlich essen, mit fertigen Wochenplänen, Einkaufslisten und 17 alltagstauglichen Rezepten. Du startest sanft und steigerst Ballaststoffe und Pflanzenvielfalt Woche für Woche.</p>
+    <div class="plan-actions" data-reveal style="--i:2"><a class="button" href="https://www.healthyfitlifeshop.net/shop/">Für 9 € kaufen</a><a class="textlink" href="https://www.healthyfitlifeshop.net/shop/">Alles zum Darm-Reset</a></div>
+    <p class="small" data-reveal style="--i:2">PDF mit 40 Seiten zum Sofort-Download. Bezahlen mit PayPal oder Karte.</p>
+    <div class="pages" data-reveal style="--i:3">
+      <img src="https://cdn.jsdelivr.net/gh/healthyfitlife/healthyfitlife-assets@f559bac/img/pdf-so-funktioniert.jpg" width="700" height="989" alt="PDF-Seite: So funktioniert dein Plan" loading="lazy" decoding="async">
+      <img src="https://cdn.jsdelivr.net/gh/healthyfitlife/healthyfitlife-assets@f559bac/img/pdf-30-pflanzen.jpg" width="700" height="989" alt="PDF-Seite: Die 30-Pflanzen-Idee" loading="lazy" decoding="async">
+      <img src="https://cdn.jsdelivr.net/gh/healthyfitlife/healthyfitlife-assets@f559bac/img/pdf-wochenplan.jpg" width="700" height="989" alt="PDF-Seite: Dein Wochenplan" loading="lazy" decoding="async">
+    </div>
+  </div>
+  <div class="slip-col">
+    <div class="slip" data-reveal style="--i:1">
+      <p class="sname">Darm-Reset</p>
+      <p class="ssub small">4-Wochen-Plan · PDF · 40 Seiten</p>
+      <dl>
+        <dt>Wochenpläne</dt><dd>4</dd>
+        <dt>Rezepte mit Darm-Tipp</dt><dd>17</dd>
+        <dt>Einkaufslisten</dt><dd>4</dd>
+        <dt>Snackideen</dt><dd>inklusive</dd>
+        <dt>Pflanzen-Tracker</dt><dd>inklusive</dd>
+        <dt>Bauchgefühl-Tagebuch</dt><dd>inklusive</dd>
+      </dl>
+      <div class="bar4"></div>
+      <p class="total"><span>Gesamt</span><span class="sum">9,00 €</span></p>
+    </div>
+  </div>
+</section>
+
+<section class="faq" aria-labelledby="hfl-h-faq">
+  <h2 id="hfl-h-faq" data-reveal>Fragen und Antworten</h2>
+  <div class="faq-list"><details name="faq" data-reveal style="--i:0"><summary>Für wen ist der Darm-Reset?<span class="plus" aria-hidden="true"></span></summary><p class="ans">Für alle, die ihren Bauch mit mehr Ballaststoffen, fermentierten Lebensmitteln und Pflanzenvielfalt unterstützen wollen. Geschrieben ist er für Frauen und für eine Person geplant. Bei Erkrankungen, in der Schwangerschaft oder bei anhaltenden Beschwerden sprich bitte vorher mit deiner Ärztin oder deinem Arzt.</p></details><details name="faq" data-reveal style="--i:1"><summary>Muss ich Kalorien zählen?<span class="plus" aria-hidden="true"></span></summary><p class="ans">Nein. Es gibt keine Kalorienziele, keine Pulver und keine Verbote. Du kochst normale Mahlzeiten mit Zutaten aus dem Supermarkt.</p></details><details name="faq" data-reveal style="--i:2"><summary>Was ist die 30-Pflanzen-Idee?<span class="plus" aria-hidden="true"></span></summary><p class="ans">Gemeint sind 30 verschiedene pflanzliche Lebensmittel pro Woche, nicht 30 Portionen. Gemüse, Obst, Hülsenfrüchte, Vollkorn, Nüsse, Samen und Kräuter zählen alle. Die Zahl stammt aus dem American Gut Project von 2018: Wer so abwechslungsreich aß, hatte dort eine vielfältigere Darmflora.</p></details><details name="faq" data-reveal style="--i:3"><summary>Wie bekomme ich das PDF?<span class="plus" aria-hidden="true"></span></summary><p class="ans">Du bezahlst im Shop mit PayPal oder Karte und bekommst danach deinen Download-Link. Das PDF hat 40 Seiten und funktioniert auf Handy, Tablet und Computer, ausgedruckt genauso.</p></details><details name="faq" data-reveal style="--i:3"><summary>Für wie viele Personen ist der Plan?<span class="plus" aria-hidden="true"></span></summary><p class="ans">Er ist für eine Person gerechnet. Was abends übrig bleibt, wird oft das Mittagessen am nächsten Tag. Kochst du für zwei, verdoppelst du einfach die Mengen auf der Einkaufsliste.</p></details><details name="faq" data-reveal style="--i:3"><summary>Kann ich den Kauf widerrufen?<span class="plus" aria-hidden="true"></span></summary><p class="ans">Bei digitalen Inhalten erlischt das Widerrufsrecht, sobald der Download beginnt und du dem vorher zugestimmt hast. <a href="https://www.healthyfitlifeshop.net/widerrufsbelehrung/">Alle Einzelheiten stehen in der Widerrufsbelehrung.</a></p></details><details name="faq" data-reveal style="--i:3"><summary>Ersetzt das eine Ernährungsberatung?<span class="plus" aria-hidden="true"></span></summary><p class="ans">Nein. Rezepte und Plan sind Ideen für den Alltag und kein medizinischer Rat.</p></details></div>
+</section>
+
+<section class="about" aria-labelledby="hfl-h-about">
+  <h2 id="hfl-h-about" data-reveal>Ehrlich empfohlen</h2>
+  <p class="lead" data-reveal style="--i:1">Ich koche, was in eine normale Woche passt, und zeige es so, wie es ist: kurze Videos, echte Mengen, keine Wundermittel.</p>
+  <div class="about-photo" data-reveal style="--i:2">
+    <img src="https://cdn.jsdelivr.net/gh/healthyfitlife/healthyfitlife-assets@f559bac/img/t2-wide.jpg" width="1600" height="1000" alt="Kürbis-Linsen-Suppe im Kupfertopf, mit Kokosmilch und Kresse" loading="lazy" decoding="async">
+    <p class="note">Werbung und Amazon-Partnerlinks sind auf dieser Seite immer gekennzeichnet. Ich empfehle nur, was in meinen Alltag passt, und sage dazu, warum.</p>
+  </div>
+  <div class="about-side" data-reveal style="--i:3">
+    <div class="about-tile"><b class="tnum">30</b><span>Pflanzen pro Woche: die Idee hinter dem Plan</span></div>
+    <dl class="facts">
+      <div><dt>Rezepte in der Serie</dt><dd class="tnum">9</dd></div>
+      <div><dt>Rezepte im Plan</dt><dd class="tnum">17</dd></div>
+      <div><dt>Planlänge</dt><dd class="tnum">28 Tage</dd></div>
+      <div><dt>Preis</dt><dd class="tnum">9 €</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="journal" id="blog" aria-labelledby="hfl-h-blog">
+  <div class="journal-head">
+    <h2 id="hfl-h-blog" data-reveal>Aus dem Blog</h2>
+    <p data-reveal style="--i:1">Mehr Rezepte, ehrliche Produkttests und Gedanken zu Gesundheit im Alltag.</p>
+    <a class="textlink" href="https://www.healthyfitlifeshop.net/blog/" data-reveal style="--i:2">Alle Beiträge lesen</a>
+  </div>
+  <div class="rows"><div class="group" data-reveal style="--i:0"><h3>Rezepte</h3><a class="row" href="https://www.healthyfitlifeshop.net/blog/3-gesunde-herbstrezepte-fuer-deine-woche-kuerbis-linsen-suppe-overnight-oats-protein-bowl/"><span class="l"><span class="dot" style="background:var(--sage)"></span><span class="n">3 gesunde Herbstrezepte für deine Woche</span></span><span class="v">3 Rezepte · Werbung</span></a><a class="row" href="https://www.healthyfitlifeshop.net/blog/6-gesunde-rezeptideen-fuer-jeden-tag-einfach-lecker-voller-naehrstoffe/"><span class="l"><span class="dot" style="background:var(--sage)"></span><span class="n">6 einfache Rezeptideen für jeden Tag</span></span><span class="v">6 Rezepte</span></a><a class="row" href="https://www.healthyfitlifeshop.net/blog/6-gesunde-rezeptideen-fuer-jeden-tag-einfach-lecker-naehrstoffreich/"><span class="l"><span class="dot" style="background:var(--sage)"></span><span class="n">6 nährstoffreiche Rezepte für mehr Abwechslung</span></span><span class="v">6 Rezepte</span></a><a class="row" href="https://www.healthyfitlifeshop.net/blog/3-gesunde-abendessen-einfach-lecker-naehrstoffreich-fuer-deinen-alltag/"><span class="l"><span class="dot" style="background:var(--sage)"></span><span class="n">3 gesunde Abendessen, einfach und nährstoffreich</span></span><span class="v">3 Rezepte</span></a><a class="row" href="https://www.healthyfitlifeshop.net/blog/4-schnelle-gesunde-sommerrezepte-frisch-leicht-und-in-nur-20-minuten-zubereitet/"><span class="l"><span class="dot" style="background:var(--sage)"></span><span class="n">4 schnelle Sommerrezepte in 20 Minuten</span></span><span class="v">4 Rezepte</span></a><a class="row" href="https://www.healthyfitlifeshop.net/blog/4-proteinreiche-salat-rezepte-gesund-lecker-und-perfekt-fuer-einen-aktiven-lifestyle/"><span class="l"><span class="dot" style="background:var(--sage)"></span><span class="n">4 proteinreiche Salate für Meal Prep</span></span><span class="v">4 Rezepte</span></a></div><div class="group" data-reveal style="--i:1"><h3>Ausprobiert</h3><a class="row" href="https://www.healthyfitlifeshop.net/blog/blackroll-blackbox-faszienrollen-set-fuer-selbstmassage-und-regeneration/"><span class="l"><span class="dot" style="background:var(--gold)"></span><span class="n">BLACKROLL BLACKBOX, Faszienrollen-Set</span></span><span class="v">Werbung</span></a><a class="row" href="https://www.healthyfitlifeshop.net/blog/gritin-fitnessbaender-ganzkoerpertraining-fuer-zu-hause-mit-5-widerstandsstufen/"><span class="l"><span class="dot" style="background:var(--gold)"></span><span class="n">Gritin Fitnessbänder für zu Hause</span></span><span class="v">Werbung</span></a><a class="row" href="https://www.healthyfitlifeshop.net/blog/wmf-kult-x-mix-go-protein-shakes-und-smoothies-einfach-to-go/"><span class="l"><span class="dot" style="background:var(--gold)"></span><span class="n">WMF Kult X Mix &amp; Go für Shakes to go</span></span><span class="v">Werbung</span></a><a class="row" href="https://www.healthyfitlifeshop.net/blog/braun-thermoscan-7-fiebermessen-leicht-gemacht-fuer-die-ganze-familie/"><span class="l"><span class="dot" style="background:var(--gold)"></span><span class="n">Braun ThermoScan 7 für die ganze Familie</span></span><span class="v">Werbung</span></a></div><div class="group" data-reveal style="--i:2"><h3>Kopf und Wohlbefinden</h3><a class="row" href="https://www.healthyfitlifeshop.net/blog/heilung-und-gesundheit-beginnen-im-kopf-wie-deine-gedanken-dein-wohlbefinden-beeinflussen/"><span class="l"><span class="dot" style="background:var(--oat)"></span><span class="n">Heilung und Gesundheit beginnen im Kopf</span></span><span class="v">Buchtipp · Werbung</span></a></div></div>
+</section>
+</div>
+<script>(function(){var root=document.getElementById('hfl');if(!root||root.dataset.on)return;root.dataset.on='1';root.classList.add('js');
+
+
+
+
+
+
+(() => {
+  const targets = root.querySelectorAll('[data-reveal]');
+  if (!targets.length) return;
+  if (!('IntersectionObserver' in window)) { targets.forEach((el) => el.classList.add('is-in')); return; }
+  const io = new IntersectionObserver((entries) => {
+    for (const entry of entries) {
+      if (!entry.isIntersecting) continue;
+      entry.target.classList.add('is-in');
+      io.unobserve(entry.target);
+    }
+  }, { rootMargin: '0px 0px -12% 0px', threshold: 0.1 });
+  targets.forEach((el) => io.observe(el));
+  
+  window.addEventListener('load', () => setTimeout(() => {
+    targets.forEach((el) => { const r = el.getBoundingClientRect(); if (r.top < innerHeight && r.bottom > 0) el.classList.add('is-in'); });
+  }, 2500));
+})();
+
+
+
+
+
+
+(() => {
+  const chapters = root.querySelectorAll('[data-ink]');
+  if (!chapters.length || !('IntersectionObserver' in window)) return;
+  const io = new IntersectionObserver((entries) => {
+    for (const entry of entries) if (entry.isIntersecting) document.documentElement.style.setProperty('--header-ink', entry.target.dataset.ink);
+  }, { rootMargin: '0px 0px -92% 0px', threshold: 0 });
+  chapters.forEach((el) => io.observe(el));
+})();
+
+
+(() => {
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  
+  const plinth = root.querySelector('[data-plinth]');
+  if (plinth && !reduce) {
+    const figs = [...plinth.querySelectorAll('figure')];
+    const capName = root.querySelector('[data-cap-name]');
+    const capPart = root.querySelector('[data-cap-part]');
+    let i = 0, timer = null;
+    const show = (n) => {
+      figs[i].classList.remove('on');
+      i = n % figs.length;
+      const f = figs[i];
+      const img = f.querySelector('img');
+      if (img.loading === 'lazy') img.loading = 'eager';
+      f.classList.add('on');
+      if (capName) capName.textContent = f.dataset.name;
+      if (capPart) capPart.textContent = f.dataset.part;
+    };
+    const start = () => { if (!timer) timer = setInterval(() => show(i + 1), 5200); };
+    const stop = () => { clearInterval(timer); timer = null; };
+    document.addEventListener('visibilitychange', () => (document.hidden ? stop() : start()));
+    
+    addEventListener('load', () => figs.forEach((f) => { const im = f.querySelector('img'); im.loading = 'eager'; }));
+    start();
+  }
+
+  
+  const counter = root.querySelector('[data-counter]');
+  if (counter) {
+    const tiles = [...root.querySelectorAll('[data-plants]')];
+    const num = counter.querySelector('[data-num]');
+    const list = counter.querySelector('[data-list]');
+    const note = counter.querySelector('[data-note]');
+    const meter = counter.querySelector('.meter');
+    const KEY = 'hfl-week';
+    let picked = new Set();
+    try { picked = new Set(JSON.parse(localStorage.getItem(KEY) || '[]')); } catch {}
+    const render = () => {
+      const plants = new Set();
+      tiles.forEach((t) => {
+        const on = picked.has(t.dataset.slug);
+        t.setAttribute('aria-pressed', String(on));
+        const st = root.querySelector(`[data-state="${t.dataset.slug}"]`);
+        if (st) st.textContent = on ? 'In deiner Woche' : '';
+        if (on) t.dataset.plants.split('|').forEach((p) => plants.add(p));
+      });
+      const n = plants.size;
+      num.textContent = n;
+      meter.style.setProperty('--p', Math.min(n / 30, 1));
+      counter.classList.toggle('full', n >= 30);
+      list.textContent = n ? [...plants].sort((a, b) => a.localeCompare(b, 'de')).join(', ') : 'Noch nichts ausgewählt.';
+      note.textContent = n === 0 ? 'Tippe auf die Gerichte, die du diese Woche kochen willst.'
+        : n >= 30 ? 'Geschafft: 30 verschiedene Pflanzen in einer Woche.'
+        : `Noch ${30 - n} bis zu deinen 30 Pflanzen.`;
+      try { localStorage.setItem(KEY, JSON.stringify([...picked])); } catch {}
+    };
+    tiles.forEach((t) => t.addEventListener('click', () => {
+      const s = t.dataset.slug;
+      picked.has(s) ? picked.delete(s) : picked.add(s);
+      render();
+    }));
+    counter.querySelector('[data-all]').addEventListener('click', () => { tiles.forEach((t) => picked.add(t.dataset.slug)); render(); });
+    counter.querySelector('[data-clear]').addEventListener('click', () => { picked.clear(); render(); });
+    counter.hidden = false;
+    render();
+  }
+
+  
+  root.querySelectorAll('video[data-loop]').forEach((v) => {
+    if (reduce) { v.removeAttribute('autoplay'); v.pause(); return; }
+    const io = new IntersectionObserver(([e]) => (e.isIntersecting ? v.play().catch(() => {}) : v.pause()), { threshold: 0.2 });
+    io.observe(v);
+  });
+})();
+
+})();</script>
